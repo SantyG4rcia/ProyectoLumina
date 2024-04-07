@@ -220,7 +220,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="X:\PROGRAMACION\Tecnico SENA 2023\Proyecto formativo\ProyectoSENA\ProyectoLumina\src\main\java\com\Lumina\proyectolumina\gui\recursos multimedia\Imagen  descriptiva lumina.png"/>
+              <Image iconType="3" name="/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel4"/>
           </Properties>

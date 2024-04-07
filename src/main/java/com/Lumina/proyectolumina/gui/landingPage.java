@@ -141,7 +141,7 @@ public class landingPage extends javax.swing.JFrame {
         descripcionLumina.setText("Parrafo");
         jPanel1.add(descripcionLumina, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 290, 210));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("X:\\PROGRAMACION\\Tecnico SENA 2023\\Proyecto formativo\\ProyectoSENA\\ProyectoLumina\\src\\main\\java\\com\\Lumina\\proyectolumina\\gui\\recursos multimedia\\Imagen  descriptiva lumina.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 400, 323));
 

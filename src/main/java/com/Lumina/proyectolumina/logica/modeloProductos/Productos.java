@@ -7,27 +7,20 @@ import java.util.ArrayList;
 public class Productos {
     
     private String nombre;
-    private String fabricante;
     private String descripcion;
     private ArrayList<Categorias> categoria;
-    private int stock;
-    private int unidVendidas;
+    private int idProducto;
+    
 
-    public Productos(String nombre, String fabricante, String descripcion, ArrayList<Categorias> categoria, int stock, int unidVendidas) {
+    public Productos(String nombre, String descripcion, ArrayList<Categorias> categoria, int idProducto) {
         this.nombre = nombre;
-        this.fabricante = fabricante;
         this.descripcion = descripcion;
         this.categoria = categoria;
-        this.stock = stock;
-        this.unidVendidas = unidVendidas;
+        this.idProducto = idProducto;
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public String getFabricante() {
-        return fabricante;
     }
 
     public String getDescripcion() {
@@ -38,22 +31,16 @@ public class Productos {
         return categoria;
     }
 
-    public int getStock() {
-        return stock;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public int getUnidVendidas() {
-        return unidVendidas;
-    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setFabricante(String fabricante) {
-        this.fabricante = fabricante;
-    }
-
+  
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -62,13 +49,8 @@ public class Productos {
         this.categoria = categoria;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
-    public void setUnidVendidas(int unidVendidas) {
-        this.unidVendidas = unidVendidas;
-    }
-    
-    
 }
