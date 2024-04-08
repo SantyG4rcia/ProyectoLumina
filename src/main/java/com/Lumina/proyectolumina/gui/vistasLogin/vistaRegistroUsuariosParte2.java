@@ -8,12 +8,12 @@ package com.Lumina.proyectolumina.gui.vistasLogin;
  *
  * @author USUARIO
  */
-public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
+public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaRegistroClientesParte2
      */
-    public vistaRegistroUsuaariosParte2() {
+    public vistaRegistroUsuariosParte2() {
         initComponents();
     }
 
@@ -42,7 +42,7 @@ public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         jPanel3.setBackground(new java.awt.Color(4, 49, 140));
 
@@ -165,13 +165,13 @@ public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(3, 90, 167));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(3, 90, 167));
+        btnRegresar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -188,7 +188,7 @@ public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton4)
+                        .addComponent(btnRegresar)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -229,7 +229,7 @@ public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)
+                        .addComponent(btnRegresar)
                         .addComponent(jButton3)))
                 .addGap(15, 15, 15))
         );
@@ -264,15 +264,18 @@ public class vistaRegistroUsuaariosParte2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+         this.dispose();
+       vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
+       newUser.setVisible(true);
+       newUser.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

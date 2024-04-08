@@ -4,6 +4,10 @@
  */
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
+import com.Lumina.proyectolumina.gui.landingPage;
+import com.Lumina.proyectolumina.gui.vistaMenuAdmin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USUARIO
@@ -36,12 +40,12 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUser = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnBackHome = new javax.swing.JButton();
+        btnInicioSesion = new javax.swing.JButton();
+        txtPasword = new javax.swing.JPasswordField();
 
         jPanel2.setBackground(new java.awt.Color(4, 49, 140));
 
@@ -144,21 +148,15 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(2, 31, 89));
         jLabel3.setText("Nombre de usuario o correo electronico");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtUserActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(2, 31, 89));
         jLabel5.setText("Contraseña");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
 
         jButton3.setBackground(new java.awt.Color(4, 49, 140));
         jButton3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -170,23 +168,23 @@ public class vistaInicioSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(3, 90, 167));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBackHome.setBackground(new java.awt.Color(3, 90, 167));
+        btnBackHome.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnBackHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackHome.setText("Regresar");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBackHomeActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(2, 31, 89));
-        jButton6.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Iniciar sesion");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnInicioSesion.setBackground(new java.awt.Color(2, 31, 89));
+        btnInicioSesion.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicioSesion.setText("Iniciar sesion");
+        btnInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnInicioSesionActionPerformed(evt);
             }
         });
 
@@ -197,19 +195,19 @@ public class vistaInicioSesion extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jButton4)
+                .addComponent(btnBackHome)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(btnInicioSesion)
                 .addContainerGap(79, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                    .addComponent(jTextField2))
+                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                    .addComponent(txtPasword))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -219,16 +217,16 @@ public class vistaInicioSesion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
+                    .addComponent(btnBackHome)
                     .addComponent(jButton3)
-                    .addComponent(jButton6))
+                    .addComponent(btnInicioSesion))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -250,39 +248,47 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtUserActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        this.dispose();
+        landingPage lp = new landingPage();
+        lp.setVisible(true);
+        lp.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnBackHomeActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
+        String user = "el_juaker3000";
+        String pasword = "1234";
+        if (txtUser.getText().equals(user) && txtPasword.getText().equals(pasword)) {
+            this.dispose();
+            vistaMenuAdmin admin = new vistaMenuAdmin();
+            admin.setVisible(true);
+            admin.setLocationRelativeTo(null);
+        } else {
+              JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS, INTENTE DE NUEVO");
+        }
+    }//GEN-LAST:event_btnInicioSesionActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBackHome;
+    private javax.swing.JButton btnInicioSesion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -291,7 +297,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField txtPasword;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

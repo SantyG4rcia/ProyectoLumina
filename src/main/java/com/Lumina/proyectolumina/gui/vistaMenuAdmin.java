@@ -4,6 +4,12 @@
  */
 package com.Lumina.proyectolumina.gui;
 
+import com.Lumina.proyectolumina.gui.vistasClientes.listaClientes;
+import com.Lumina.proyectolumina.gui.vistasEmpleados.vistaListaEmpleados;
+import com.Lumina.proyectolumina.gui.vistasProductos.vistaListaServicios;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 /**
  *
  * @author USUARIO
@@ -15,7 +21,99 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
      */
     public vistaMenuAdmin() {
         initComponents();
+        descripcionServicios.setText(formatearTexto(instrucciones));
+        eventosMouse();
     }
+    
+    
+    private String instrucciones = "Pase el ratón sobre cada "
+            + "botón para conocer las caracteristicas "
+            + "de cada opcion mostrada en el menú";
+    
+    private String descripClientes = "Permite gestionar y modificar"
+            + "la informacion de cada cliente segun las necesidades";
+    
+    private String descripEmpleados = "Permite gestionar y modificar"
+            + "los diferentes proyectos que trabaja la emoresa"
+            + "actualmente y su nomina";
+    
+    private String descripServicios = "Permite gestionar y modificar"
+            + "los diferentes servicios o productos que ofrece"
+            + "la empresa actualmente";
+    
+    private String formatearTexto (String texto){
+         return "<html><p>" +texto+ "</p></html>";
+    }
+    
+    private void eventosMouse () {
+         MouseListener eventosMouseClientes = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {}
+
+            @Override
+            public void mousePressed(MouseEvent e) {}
+
+            @Override
+            public void mouseReleased(MouseEvent e) {}
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                descripcionServicios.setText(formatearTexto(descripClientes));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                 descripcionServicios.setText(formatearTexto(instrucciones));
+            }
+            
+        };
+         btnClientes.addMouseListener(eventosMouseClientes);
+        
+        MouseListener eventosMouseServicios = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {}
+            
+            @Override
+            public void mousePressed(MouseEvent e) {}
+            
+            @Override
+            public void mouseReleased(MouseEvent e) {}
+            
+            @Override
+            public void mouseEntered(MouseEvent e) {
+               descripcionServicios.setText(formatearTexto(descripServicios));
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e) {
+                descripcionServicios.setText(formatearTexto(instrucciones));
+            }
+            
+        };
+        btnServicios.addMouseListener(eventosMouseServicios);
+        
+        MouseListener eventosMouseEmpleados = new MouseListener() {
+             @Override
+             public void mouseClicked(MouseEvent e) {}
+
+             @Override
+             public void mousePressed(MouseEvent e) {}
+
+             @Override
+             public void mouseReleased(MouseEvent e) {}
+
+             @Override
+             public void mouseEntered(MouseEvent e) {
+                 descripcionServicios.setText(formatearTexto(descripEmpleados));
+             }
+
+             @Override
+             public void mouseExited(MouseEvent e) {
+                 descripcionServicios.setText(formatearTexto(instrucciones));
+             }
+        };
+        btnEmpleados.addMouseListener(eventosMouseEmpleados);
+    }  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,11 +128,11 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        btnClientes = new javax.swing.JButton();
+        btnEmpleados = new javax.swing.JButton();
+        btnServicios = new javax.swing.JButton();
+        btnBackHome = new javax.swing.JButton();
+        descripcionServicios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,49 +172,48 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(6, 199, 242));
-        jButton1.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Gestion de clientes");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnClientes.setBackground(new java.awt.Color(6, 199, 242));
+        btnClientes.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnClientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnClientes.setText("Gestion de clientes");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnClientesActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(3, 90, 167));
-        jButton5.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Gestion de nomina y proyectos");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEmpleados.setBackground(new java.awt.Color(3, 90, 167));
+        btnEmpleados.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEmpleados.setForeground(new java.awt.Color(255, 255, 255));
+        btnEmpleados.setText("Gestion de nomina y proyectos");
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEmpleadosActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(4, 49, 140));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Gestion de servicios");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnServicios.setBackground(new java.awt.Color(4, 49, 140));
+        btnServicios.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnServicios.setForeground(new java.awt.Color(255, 255, 255));
+        btnServicios.setText("Gestion de servicios");
+        btnServicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnServiciosActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(2, 31, 89));
-        jButton2.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Volver a la ventana de inicio");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBackHome.setBackground(new java.awt.Color(2, 31, 89));
+        btnBackHome.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnBackHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackHome.setText("Volver a la ventana de inicio");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBackHomeActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Mulish", 2, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Descripcion de cada servicio");
+        descripcionServicios.setFont(new java.awt.Font("Mulish", 2, 14)); // NOI18N
+        descripcionServicios.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,12 +223,12 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBackHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(35, 35, 35)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(descripcionServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -141,16 +238,16 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnClientes)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(btnEmpleados)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btnServicios)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2))
+                        .addComponent(btnBackHome))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(descripcionServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(0, 32, Short.MAX_VALUE))
         );
 
@@ -168,30 +265,42 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        this.dispose();
+        listaClientes clientes = new listaClientes();
+        clientes.setVisible(true);
+        clientes.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnClientesActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        this.dispose();
+        vistaListaEmpleados empleados = new vistaListaEmpleados();
+        empleados.setVisible(true);
+        empleados.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServiciosActionPerformed
+        this.dispose();
+        vistaListaServicios servicios = new vistaListaServicios();
+        servicios.setVisible(true);
+        servicios.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnServiciosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+        this.dispose();
+        landingPage lp = new landingPage();
+        lp.setVisible(true);
+        lp.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnBackHomeActionPerformed
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnBackHome;
+    private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnServicios;
+    private javax.swing.JLabel descripcionServicios;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

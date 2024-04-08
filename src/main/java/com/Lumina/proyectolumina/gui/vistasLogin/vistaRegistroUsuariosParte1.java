@@ -4,6 +4,8 @@
  */
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
+import com.Lumina.proyectolumina.gui.landingPage;
+
 /**
  *
  * @author USUARIO
@@ -44,8 +46,8 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnPaso2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,23 +147,23 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(2, 31, 89));
         jLabel11.setText("PASO 1/2");
 
-        jButton3.setBackground(new java.awt.Color(4, 49, 140));
-        jButton3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Siguiente");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnPaso2.setBackground(new java.awt.Color(4, 49, 140));
+        btnPaso2.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnPaso2.setForeground(new java.awt.Color(255, 255, 255));
+        btnPaso2.setText("Siguiente");
+        btnPaso2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnPaso2ActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(3, 90, 167));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Regresar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(3, 90, 167));
+        btnRegresar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -176,9 +178,9 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(btnRegresar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3))
+                        .addComponent(btnPaso2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -236,11 +238,11 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)
-                        .addComponent(jButton3)))
+                        .addComponent(btnRegresar)
+                        .addComponent(btnPaso2))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -274,19 +276,25 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnPaso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaso2ActionPerformed
+         this.dispose();
+       vistaRegistroUsuariosParte2 newUser = new vistaRegistroUsuariosParte2();
+       newUser.setVisible(true);
+       newUser.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnPaso2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        this.dispose();
+        landingPage lp = new landingPage();
+        lp.setVisible(true);
+        lp.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnPaso2;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;

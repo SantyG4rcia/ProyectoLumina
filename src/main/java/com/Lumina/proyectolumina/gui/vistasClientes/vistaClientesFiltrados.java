@@ -31,9 +31,10 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tb_Pedidos = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tb_ClientesFilt = new javax.swing.JTable();
+        btnElimClienteFilt = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        btnEditarClientefilt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +59,7 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(223, 223, 223)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,8 +74,8 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        tb_Pedidos.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
-        tb_Pedidos.setModel(new javax.swing.table.DefaultTableModel(
+        tb_ClientesFilt.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        tb_ClientesFilt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -97,34 +98,44 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tb_Pedidos.setCellSelectionEnabled(true);
-        tb_Pedidos.setOpaque(false);
-        tb_Pedidos.setShowHorizontalLines(true);
-        tb_Pedidos.setShowVerticalLines(true);
-        tb_Pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+        tb_ClientesFilt.setCellSelectionEnabled(true);
+        tb_ClientesFilt.setOpaque(false);
+        tb_ClientesFilt.setShowHorizontalLines(true);
+        tb_ClientesFilt.setShowVerticalLines(true);
+        tb_ClientesFilt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_PedidosMouseClicked(evt);
+                tb_ClientesFiltMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tb_Pedidos);
+        jScrollPane2.setViewportView(tb_ClientesFilt);
 
-        jButton4.setBackground(new java.awt.Color(4, 49, 140));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Eliminar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnElimClienteFilt.setBackground(new java.awt.Color(4, 49, 140));
+        btnElimClienteFilt.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnElimClienteFilt.setForeground(new java.awt.Color(255, 255, 255));
+        btnElimClienteFilt.setText("Eliminar");
+        btnElimClienteFilt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnElimClienteFiltActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(2, 31, 89));
-        jButton2.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Regresar ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(2, 31, 89));
+        btnRegresar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar ");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
+        btnEditarClientefilt.setBackground(new java.awt.Color(3, 90, 167));
+        btnEditarClientefilt.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEditarClientefilt.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarClientefilt.setText("Editar");
+        btnEditarClientefilt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClientefiltActionPerformed(evt);
             }
         });
 
@@ -134,13 +145,14 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(70, Short.MAX_VALUE))
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnElimClienteFilt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarClientefilt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,14 +160,16 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton4)
+                        .addGap(95, 95, 95)
+                        .addComponent(btnEditarClientefilt)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(btnElimClienteFilt)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegresar)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,17 +188,21 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tb_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_PedidosMouseClicked
+    private void tb_ClientesFiltMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_ClientesFiltMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_tb_PedidosMouseClicked
+    }//GEN-LAST:event_tb_ClientesFiltMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnElimClienteFiltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElimClienteFiltActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnElimClienteFiltActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnEditarClientefiltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClientefiltActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarClientefiltActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,13 +240,14 @@ public class vistaClientesFiltrados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnEditarClientefilt;
+    private javax.swing.JButton btnElimClienteFilt;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable tb_Pedidos;
+    public javax.swing.JTable tb_ClientesFilt;
     // End of variables declaration//GEN-END:variables
 }

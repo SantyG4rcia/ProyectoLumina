@@ -4,6 +4,9 @@
  */
 package com.Lumina.proyectolumina.gui;
 
+import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
+import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
+
 /**
  *
  * @author USUARIO
@@ -47,8 +50,8 @@ public class landingPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnInicioSesion = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         titulo_lp = new javax.swing.JLabel();
@@ -68,20 +71,25 @@ public class landingPage extends javax.swing.JFrame {
         jLabel2.setMinimumSize(new java.awt.Dimension(960, 560));
         jLabel2.setName(""); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(3, 90, 167));
-        jButton1.setFont(new java.awt.Font("Mulish ExtraBold", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Iniciar sesion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInicioSesion.setBackground(new java.awt.Color(3, 90, 167));
+        btnInicioSesion.setFont(new java.awt.Font("Mulish ExtraBold", 0, 12)); // NOI18N
+        btnInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicioSesion.setText("Iniciar sesion");
+        btnInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInicioSesionActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Mulish ExtraBold", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(4, 49, 140));
-        jButton2.setText("Registrarse");
+        btnRegistrarse.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistrarse.setFont(new java.awt.Font("Mulish ExtraBold", 1, 12)); // NOI18N
+        btnRegistrarse.setForeground(new java.awt.Color(4, 49, 140));
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -91,9 +99,9 @@ public class landingPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(btnRegistrarse)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
         jPanel2Layout.setVerticalGroup(
@@ -106,8 +114,8 @@ public class landingPage extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))))
+                            .addComponent(btnInicioSesion)
+                            .addComponent(btnRegistrarse))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -141,7 +149,7 @@ public class landingPage extends javax.swing.JFrame {
         descripcionLumina.setText("Parrafo");
         jPanel1.add(descripcionLumina, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 290, 210));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("X:\\PROGRAMACION\\Tecnico SENA 2023\\Proyecto formativo\\ProyectoSENA\\ProyectoLumina\\src\\main\\java\\com\\Lumina\\proyectolumina\\gui\\recursos multimedia\\Imagen  descriptiva lumina.png")); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 400, 323));
 
@@ -159,20 +167,30 @@ public class landingPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
+        this.dispose();
+        vistaInicioSesion login = new vistaInicioSesion();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        this.dispose();
+       vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
+       newUser.setVisible(true);
+       newUser.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInicioSesion;
+    private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel descripcionLumina;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

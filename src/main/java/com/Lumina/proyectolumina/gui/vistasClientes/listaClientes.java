@@ -4,6 +4,8 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientes;
 
+import com.Lumina.proyectolumina.gui.vistaMenuAdmin;
+
 /**
  *
  * @author USUARIO
@@ -34,10 +36,10 @@ public class listaClientes extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_Pedidos = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEliminarCliente = new javax.swing.JButton();
+        btnEditarCliente = new javax.swing.JButton();
+        btnAddCliente = new javax.swing.JButton();
+        btnBackHome = new javax.swing.JButton();
 
         jButton3.setBackground(new java.awt.Color(4, 49, 140));
         jButton3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -127,43 +129,43 @@ public class listaClientes extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tb_Pedidos);
 
-        jButton4.setBackground(new java.awt.Color(4, 49, 140));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Eliminar cliente");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarCliente.setBackground(new java.awt.Color(4, 49, 140));
+        btnEliminarCliente.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarCliente.setText("Eliminar cliente");
+        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEliminarClienteActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(3, 90, 167));
-        jButton5.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Editar cliente");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarCliente.setBackground(new java.awt.Color(3, 90, 167));
+        btnEditarCliente.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEditarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarCliente.setText("Editar cliente");
+        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEditarClienteActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(6, 199, 242));
-        jButton1.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddCliente.setBackground(new java.awt.Color(6, 199, 242));
+        btnAddCliente.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnAddCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddCliente.setText("Agregar cliente");
+        btnAddCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddClienteActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(2, 31, 89));
-        jButton2.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Ir al menu principal");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBackHome.setBackground(new java.awt.Color(2, 31, 89));
+        btnBackHome.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnBackHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnBackHome.setText("Ir al menu principal");
+        btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBackHomeActionPerformed(evt);
             }
         });
 
@@ -177,10 +179,10 @@ public class listaClientes extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2))
+                    .addComponent(btnAddCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBackHome))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -193,13 +195,13 @@ public class listaClientes extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jButton1)
+                        .addComponent(btnAddCliente)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(btnEditarCliente)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btnEliminarCliente)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                        .addComponent(btnBackHome)))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -222,34 +224,46 @@ public class listaClientes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tb_PedidosMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
+       this.dispose();
+       vistaFiltrarClientes clientes = new vistaFiltrarClientes();
+       clientes.setVisible(true);
+       clientes.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEliminarClienteActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        this.dispose();
+       vistaFiltrarClientes clientes = new vistaFiltrarClientes();
+       clientes.setVisible(true);
+       clientes.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnAddClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClienteActionPerformed
+        this.dispose();
+        vistaAgregarCliente cliente = new vistaAgregarCliente();
+        cliente.setVisible(true);
+        cliente.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAddClienteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
+         this.dispose();
+         vistaMenuAdmin admin = new vistaMenuAdmin();
+         admin.setVisible(true);
+         admin.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnBackHomeActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAddCliente;
+    private javax.swing.JButton btnBackHome;
+    private javax.swing.JButton btnEditarCliente;
+    private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
