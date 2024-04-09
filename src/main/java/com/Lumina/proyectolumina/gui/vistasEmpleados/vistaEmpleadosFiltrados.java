@@ -4,6 +4,10 @@
  */
 package com.Lumina.proyectolumina.gui.vistasEmpleados;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USUARIO
@@ -15,6 +19,9 @@ public class vistaEmpleadosFiltrados extends javax.swing.JFrame {
      */
     public vistaEmpleadosFiltrados() {
         initComponents();
+         ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
+        Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
+        lblIconoLumina.setIcon(icon2);
     }
 
     /**
@@ -31,8 +38,8 @@ public class vistaEmpleadosFiltrados extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         btnEditEmpleado = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        lblIconoLumina = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_Pedidos = new javax.swing.JTable();
 
@@ -72,13 +79,12 @@ public class vistaEmpleadosFiltrados extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(4, 49, 140));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("X:\\PROGRAMACION\\Tecnico SENA 2023\\Proyecto formativo\\ProyectoSENA\\ProyectoLumina\\src\\main\\java\\com\\Lumina\\proyectolumina\\gui\\recursos multimedia\\logo lumina blanco (2).png")); // NOI18N
-        jLabel4.setMinimumSize(new java.awt.Dimension(960, 560));
-        jLabel4.setName(""); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Mulish ExtraBold", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Lista de empleados");
+
+        lblIconoLumina.setMinimumSize(new java.awt.Dimension(960, 560));
+        lblIconoLumina.setName(""); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -86,21 +92,21 @@ public class vistaEmpleadosFiltrados extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblIconoLumina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(21, 21, 21))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblIconoLumina, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tb_Pedidos.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
@@ -244,10 +250,10 @@ public class vistaEmpleadosFiltrados extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblIconoLumina;
     public javax.swing.JTable tb_Pedidos;
     // End of variables declaration//GEN-END:variables
 }

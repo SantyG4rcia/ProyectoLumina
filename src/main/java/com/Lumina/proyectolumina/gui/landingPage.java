@@ -47,6 +47,10 @@ public class landingPage extends javax.swing.JFrame {
         ImageIcon imageicon = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png");
         Icon icon = new ImageIcon(imageicon.getImage().getScaledInstance(lblDescripcion.getWidth(), lblDescripcion.getHeight(), Image.SCALE_SMOOTH));
         lblDescripcion.setIcon(icon);
+        
+        ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
+        Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
+        lblIconoLumina.setIcon(icon2);
     }
 
     public String strTohuml (String texto) {
@@ -64,7 +68,7 @@ public class landingPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblIconoLumina = new javax.swing.JLabel();
         btnInicioSesion = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -82,9 +86,8 @@ public class landingPage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(4, 49, 140));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("X:\\PROGRAMACION\\Tecnico SENA 2023\\Proyecto formativo\\ProyectoSENA\\ProyectoLumina\\src\\main\\java\\com\\Lumina\\proyectolumina\\gui\\recursos multimedia\\logo lumina blanco (2).png")); // NOI18N
-        jLabel2.setMinimumSize(new java.awt.Dimension(960, 560));
-        jLabel2.setName(""); // NOI18N
+        lblIconoLumina.setMinimumSize(new java.awt.Dimension(960, 560));
+        lblIconoLumina.setName(""); // NOI18N
 
         btnInicioSesion.setBackground(new java.awt.Color(3, 90, 167));
         btnInicioSesion.setFont(new java.awt.Font("Mulish ExtraBold", 0, 12)); // NOI18N
@@ -112,7 +115,7 @@ public class landingPage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblIconoLumina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRegistrarse)
                 .addGap(18, 18, 18)
@@ -125,7 +128,7 @@ public class landingPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblIconoLumina, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -205,11 +208,11 @@ public class landingPage extends javax.swing.JFrame {
     private javax.swing.JLabel descripcionLumina;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblIconoLumina;
     private javax.swing.JLabel titulo_lp;
     // End of variables declaration//GEN-END:variables
 }
