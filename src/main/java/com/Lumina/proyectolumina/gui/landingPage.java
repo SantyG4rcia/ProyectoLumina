@@ -6,6 +6,17 @@ package com.Lumina.proyectolumina.gui;
 
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.MalformedInputException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -32,6 +43,10 @@ public class landingPage extends javax.swing.JFrame {
         initComponents();
         titulo_lp.setText(strTohuml(textoTitulo));
         descripcionLumina.setText(formatearTexto(parrafoDescripcionLumina));
+        
+        ImageIcon imageicon = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png");
+        Icon icon = new ImageIcon(imageicon.getImage().getScaledInstance(lblDescripcion.getWidth(), lblDescripcion.getHeight(), Image.SCALE_SMOOTH));
+        lblDescripcion.setIcon(icon);
     }
 
     public String strTohuml (String texto) {
@@ -56,7 +71,7 @@ public class landingPage extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         titulo_lp = new javax.swing.JLabel();
         descripcionLumina = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblDescripcion = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -148,10 +163,7 @@ public class landingPage extends javax.swing.JFrame {
         descripcionLumina.setForeground(new java.awt.Color(0, 0, 0));
         descripcionLumina.setText("Parrafo");
         jPanel1.add(descripcionLumina, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 290, 210));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("X:\\PROGRAMACION\\Tecnico SENA 2023\\Proyecto formativo\\ProyectoSENA\\ProyectoLumina\\src\\main\\java\\com\\Lumina\\proyectolumina\\gui\\recursos multimedia\\Imagen  descriptiva lumina.png")); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 400, 323));
+        jPanel1.add(lblDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 400, 323));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,9 +207,9 @@ public class landingPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblDescripcion;
     private javax.swing.JLabel titulo_lp;
     // End of variables declaration//GEN-END:variables
 }

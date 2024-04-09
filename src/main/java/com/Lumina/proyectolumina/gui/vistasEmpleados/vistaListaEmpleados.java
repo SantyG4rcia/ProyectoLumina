@@ -17,8 +17,10 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
      */
     public vistaListaEmpleados() {
         initComponents();
-    }
 
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,9 +32,9 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnBackHome15 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnDeleteEmpleado = new javax.swing.JButton();
+        btnEditEmpleado = new javax.swing.JButton();
+        btnAddEmpleado = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,33 +55,33 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(4, 49, 140));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Eliminar empleado");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteEmpleado.setBackground(new java.awt.Color(4, 49, 140));
+        btnDeleteEmpleado.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnDeleteEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        btnDeleteEmpleado.setText("Eliminar empleado");
+        btnDeleteEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnDeleteEmpleadoActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(3, 90, 167));
-        jButton5.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Editar empleado");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEditEmpleado.setBackground(new java.awt.Color(3, 90, 167));
+        btnEditEmpleado.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEditEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditEmpleado.setText("Editar empleado");
+        btnEditEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEditEmpleadoActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(6, 199, 242));
-        jButton1.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar empleado");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddEmpleado.setBackground(new java.awt.Color(6, 199, 242));
+        btnAddEmpleado.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnAddEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddEmpleado.setText("Agregar empleado");
+        btnAddEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddEmpleadoActionPerformed(evt);
             }
         });
 
@@ -162,9 +164,9 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeleteEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBackHome15))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -178,11 +180,11 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jButton1)
+                        .addComponent(btnAddEmpleado)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(btnEditEmpleado)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btnDeleteEmpleado)
                         .addGap(18, 18, 18)
                         .addComponent(btnBackHome15)))
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -209,17 +211,26 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
         admin.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackHome15ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnDeleteEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEmpleadoActionPerformed
+        this.dispose();
+        vistaFiltrarEmpleados findEmpleados = new vistaFiltrarEmpleados();
+        findEmpleados.setVisible(true);
+        findEmpleados.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnDeleteEmpleadoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnEditEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEmpleadoActionPerformed
+        this.dispose();
+        vistaFiltrarEmpleados findEmpleados = new vistaFiltrarEmpleados();
+        findEmpleados.setVisible(true);
+        findEmpleados.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEditEmpleadoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnAddEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmpleadoActionPerformed
+        this.dispose();
+        vistaAgregarEmpleado addEmpleado = new vistaAgregarEmpleado();
+        addEmpleado.setVisible(true);
+        addEmpleado.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAddEmpleadoActionPerformed
 
     private void tb_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_PedidosMouseClicked
         // TODO add your handling code here:
@@ -261,30 +272,15 @@ public class vistaListaEmpleados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBackHome;
-    private javax.swing.JButton btnBackHome1;
-    private javax.swing.JButton btnBackHome10;
-    private javax.swing.JButton btnBackHome11;
-    private javax.swing.JButton btnBackHome12;
-    private javax.swing.JButton btnBackHome13;
-    private javax.swing.JButton btnBackHome14;
+    private javax.swing.JButton btnAddEmpleado;
     private javax.swing.JButton btnBackHome15;
-    private javax.swing.JButton btnBackHome2;
-    private javax.swing.JButton btnBackHome3;
-    private javax.swing.JButton btnBackHome4;
-    private javax.swing.JButton btnBackHome5;
-    private javax.swing.JButton btnBackHome6;
-    private javax.swing.JButton btnBackHome7;
-    private javax.swing.JButton btnBackHome8;
-    private javax.swing.JButton btnBackHome9;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnDeleteEmpleado;
+    private javax.swing.JButton btnEditEmpleado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tb_Pedidos;
+    public javax.swing.JTable tb_Pedidos;
     // End of variables declaration//GEN-END:variables
 }

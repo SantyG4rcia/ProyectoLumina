@@ -34,9 +34,9 @@ public class vistaListaServicios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_Pedidos = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnEliminarServicio = new javax.swing.JButton();
+        btnEditServicio = new javax.swing.JButton();
+        btnAddServicio = new javax.swing.JButton();
         btnBackHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,14 +83,14 @@ public class vistaListaServicios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id Servicio", "Nombre", "Tipo servicio", "Precio", "Estado"
+                "Id Servicio", "Nombre", "Tipo servicio", "Descripcion", "Precio", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -112,33 +112,33 @@ public class vistaListaServicios extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tb_Pedidos);
 
-        jButton4.setBackground(new java.awt.Color(4, 49, 140));
-        jButton4.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Eliminar servicio");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarServicio.setBackground(new java.awt.Color(4, 49, 140));
+        btnEliminarServicio.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEliminarServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarServicio.setText("Eliminar servicio");
+        btnEliminarServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnEliminarServicioActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(3, 90, 167));
-        jButton5.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Editar servicio");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnEditServicio.setBackground(new java.awt.Color(3, 90, 167));
+        btnEditServicio.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnEditServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditServicio.setText("Editar servicio");
+        btnEditServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnEditServicioActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(6, 199, 242));
-        jButton1.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar servicio");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddServicio.setBackground(new java.awt.Color(6, 199, 242));
+        btnAddServicio.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnAddServicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddServicio.setText("Agregar servicio");
+        btnAddServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddServicioActionPerformed(evt);
             }
         });
 
@@ -162,9 +162,9 @@ public class vistaListaServicios extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddServicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarServicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditServicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBackHome))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
@@ -178,11 +178,11 @@ public class vistaListaServicios extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jButton1)
+                        .addComponent(btnAddServicio)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(btnEditServicio)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(btnEliminarServicio)
                         .addGap(18, 18, 18)
                         .addComponent(btnBackHome)))
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -206,17 +206,26 @@ public class vistaListaServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tb_PedidosMouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnEliminarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarServicioActionPerformed
+        this.dispose();
+        vistaFiltrarServicios findServicio = new vistaFiltrarServicios();
+        findServicio.setVisible(true);
+        findServicio.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEliminarServicioActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnEditServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditServicioActionPerformed
+        this.dispose();
+        vistaFiltrarServicios findServicio = new vistaFiltrarServicios();
+        findServicio.setVisible(true);
+        findServicio.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnEditServicioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnAddServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddServicioActionPerformed
+        this.dispose();
+        vistaCrearProducto addServicio = new vistaCrearProducto();
+        addServicio.setVisible(true);
+        addServicio.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAddServicioActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
         this.dispose();
@@ -228,10 +237,10 @@ public class vistaListaServicios extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddServicio;
     private javax.swing.JButton btnBackHome;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnEditServicio;
+    private javax.swing.JButton btnEliminarServicio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

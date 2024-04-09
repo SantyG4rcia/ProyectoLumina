@@ -285,9 +285,10 @@ public class vistaRegistroUsuariosParte1 extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         this.dispose();
-        landingPage lp = new landingPage();
-        lp.setVisible(true);
-        lp.setLocationRelativeTo(null);
+        landingPage lp;
+         lp = new landingPage();
+         lp.setVisible(true);
+         lp.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
  

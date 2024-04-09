@@ -257,10 +257,11 @@ public class vistaInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
-        this.dispose();
-        landingPage lp = new landingPage();
-        lp.setVisible(true);
-        lp.setLocationRelativeTo(null);
+         this.dispose();
+        landingPage lp;
+         lp = new landingPage();
+         lp.setVisible(true);
+         lp.setLocationRelativeTo(null);   
     }//GEN-LAST:event_btnBackHomeActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
