@@ -8,6 +8,7 @@ import com.Lumina.proyectolumina.gui.vistaMenuAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JTable;
 
 /**
  *
@@ -20,10 +21,14 @@ public class listaClientes extends javax.swing.JFrame {
      */
     public listaClientes() {
         initComponents();
-        
+     
         ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon2);
+    }
+
+    public JTable getTb_Clientes() {
+        return tb_Clientes;
     }
 
     /**
@@ -42,7 +47,7 @@ public class listaClientes extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblIconoLumina = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tb_Pedidos = new javax.swing.JTable();
+        tb_Clientes = new javax.swing.JTable();
         btnEliminarCliente = new javax.swing.JButton();
         btnEditarCliente = new javax.swing.JButton();
         btnAddCliente = new javax.swing.JButton();
@@ -100,40 +105,17 @@ public class listaClientes extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        tb_Pedidos.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
-        tb_Pedidos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Id Cliente", "Nombre", "Telefono ", "Correo", "Direccion", "Estado", "Activo desde"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tb_Pedidos.setCellSelectionEnabled(true);
-        tb_Pedidos.setOpaque(false);
-        tb_Pedidos.setShowHorizontalLines(true);
-        tb_Pedidos.setShowVerticalLines(true);
-        tb_Pedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+        tb_Clientes.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        tb_Clientes.setCellSelectionEnabled(true);
+        tb_Clientes.setOpaque(false);
+        tb_Clientes.setShowHorizontalLines(true);
+        tb_Clientes.setShowVerticalLines(true);
+        tb_Clientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_PedidosMouseClicked(evt);
+                tb_ClientesMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tb_Pedidos);
+        jScrollPane2.setViewportView(tb_Clientes);
 
         btnEliminarCliente.setBackground(new java.awt.Color(4, 49, 140));
         btnEliminarCliente.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -181,8 +163,8 @@ public class listaClientes extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAddCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -225,10 +207,10 @@ public class listaClientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tb_PedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_PedidosMouseClicked
+    private void tb_ClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_ClientesMouseClicked
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tb_PedidosMouseClicked
+    }//GEN-LAST:event_tb_ClientesMouseClicked
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
        this.dispose();
@@ -276,6 +258,6 @@ public class listaClientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIconoLumina;
-    public javax.swing.JTable tb_Pedidos;
+    public javax.swing.JTable tb_Clientes;
     // End of variables declaration//GEN-END:variables
 }

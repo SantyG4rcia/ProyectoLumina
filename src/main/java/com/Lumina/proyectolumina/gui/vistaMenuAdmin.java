@@ -7,6 +7,7 @@ package com.Lumina.proyectolumina.gui;
 import com.Lumina.proyectolumina.gui.vistasClientes.listaClientes;
 import com.Lumina.proyectolumina.gui.vistasEmpleados.vistaListaEmpleados;
 import com.Lumina.proyectolumina.gui.vistasProductos.vistaListaServicios;
+import com.Lumina.proyectolumina.persistencia.controllerClients.GetClientsLuninApi;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -274,6 +275,7 @@ public class vistaMenuAdmin extends javax.swing.JFrame {
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         this.dispose();
         listaClientes clientes = new listaClientes();
+        GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
         clientes.setVisible(true);
         clientes.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnClientesActionPerformed
