@@ -5,9 +5,12 @@
 package com.Lumina.proyectolumina.gui.vistasClientes;
 
 import com.Lumina.proyectolumina.gui.vistaMenuAdmin;
+import com.Lumina.proyectolumina.persistencia.controllerClients.DeleteClientLumiApi;
+import com.Lumina.proyectolumina.persistencia.controllerClients.UpdateClientLumApi;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -16,12 +19,23 @@ import javax.swing.JTable;
  */
 public class listaClientes extends javax.swing.JFrame {
 
+    private vistaEditarCliente clientes;
+    private vistaEliminarCliente deleteCli;
+
+    public vistaEliminarCliente getDeleteCli() {
+        return deleteCli;
+    }
+    
+    public vistaEditarCliente getClientes() {
+        return clientes;
+    }
+
     /**
      * Creates new form listaClientes
      */
     public listaClientes() {
         initComponents();
-     
+
         ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon2);
@@ -213,17 +227,29 @@ public class listaClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_tb_ClientesMouseClicked
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
-       this.dispose();
-       vistaFiltrarClientes clientes = new vistaFiltrarClientes();
-       clientes.setVisible(true);
-       clientes.setLocationRelativeTo(null);
+        String nombreEncontrado = JOptionPane.showInputDialog("iNGRESE EL NOMBRE DEL CLIENTE QUE DESEE BUSCAR");
+        if (nombreEncontrado.equals("")) {
+            JOptionPane.showMessageDialog(null, "EL CAMPO 'NOMBRE' NO DEBE ESTAR VACIO");
+        } else {
+            this.dispose();
+            this.deleteCli = new vistaEliminarCliente();
+            this.deleteCli.setVisible(true);
+            this.deleteCli.setLocationRelativeTo(null);
+            DeleteClientLumiApi.deleteClient(nombreEncontrado, getDeleteCli(), this);
+        }
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-        this.dispose();
-       vistaFiltrarClientes clientes = new vistaFiltrarClientes();
-       clientes.setVisible(true);
-       clientes.setLocationRelativeTo(null);
+        String nombreEncontrado = JOptionPane.showInputDialog("iNGRESE EL NOMBRE DEL CLIENTE QUE DESEE BUSCAR");
+        if (nombreEncontrado.equals("")) {
+            JOptionPane.showMessageDialog(null, "EL CAMPO 'NOMBRE' NO DEBE ESTAR VACIO");
+        } else {
+            this.dispose();
+            this.clientes = new vistaEditarCliente();
+            this.clientes.setVisible(true);
+            this.clientes.setLocationRelativeTo(null);
+            UpdateClientLumApi.UpdateClient(nombreEncontrado, getClientes());
+        }
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -238,12 +264,11 @@ public class listaClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddClienteActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
-         this.dispose();
-         vistaMenuAdmin admin = new vistaMenuAdmin();
-         admin.setVisible(true);
-         admin.setLocationRelativeTo(null);
+        this.dispose();
+        vistaMenuAdmin admin = new vistaMenuAdmin();
+        admin.setVisible(true);
+        admin.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackHomeActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

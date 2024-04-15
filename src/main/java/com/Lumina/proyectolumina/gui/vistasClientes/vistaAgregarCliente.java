@@ -5,6 +5,7 @@
 package com.Lumina.proyectolumina.gui.vistasClientes;
 
 import com.Lumina.proyectolumina.persistencia.controllerClients.AddClientsLuninApi;
+import com.Lumina.proyectolumina.persistencia.controllerClients.GetClientsLuninApi;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -341,6 +342,7 @@ public class vistaAgregarCliente extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         this.dispose();
         listaClientes clientes = new listaClientes();
+        GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
         clientes.setVisible(true);
         clientes.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
