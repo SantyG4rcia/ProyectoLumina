@@ -4,7 +4,7 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerClients;
 
-import com.Lumina.proyectolumina.gui.vistasClientes.vistaAgregarCliente;
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.vistaAgregarCliente;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;

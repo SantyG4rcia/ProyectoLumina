@@ -1,7 +1,7 @@
 package com.Lumina.proyectolumina.persistencia.controllerClients;
 
-import com.Lumina.proyectolumina.gui.vistasClientes.listaClientes;
-import com.Lumina.proyectolumina.gui.vistasClientes.vistaEliminarCliente;
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.listaClientes;
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.vistaEliminarCliente;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -14,11 +14,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 public class DeleteClientLumiApi {
 
-    public static void deleteClient(String nombreEncontrado, vistaEliminarCliente deleteCliente, listaClientes clients) {
+    public static void deleteClient(String nombreEncontrado, vistaEliminarCliente deleteCliente) {
         try {
             // hacer peticion get para obtener el registro a eliminar
             String strUrl = "http://localhost:3001/clientes/?name=" + URLEncoder.encode(nombreEncontrado, "UTF-8");
@@ -57,6 +56,7 @@ public class DeleteClientLumiApi {
                 String tDocumento = "";
                 String nDocumento = "";
                 String tPago = "";
+
                 for (JsonElement element : jsonArray) {
                     JsonObject jsonObject = element.getAsJsonObject();
                     if (jsonObject.get("nombre").getAsString().equals(nombreEncontrado)) {
@@ -87,15 +87,48 @@ public class DeleteClientLumiApi {
                         deleteCliente.getTxtNumDoc().setText(nDocumento);
                         deleteCliente.getCbMetodoPago().setSelectedItem(tPago);
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN CLIENTE CON LA INFORMACION SUMINISTRADA");
+                        deleteCliente.dispose();
+                        listaClientes clientes = new listaClientes();
+                        GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
+                        clientes.setVisible(true);
+                        clientes.setLocationRelativeTo(null);
+                        break;
                     }
 
                 }
 
                 // HACER LA PETICION DELETE 
+                final String id2 = id;
+                final JsonObject clienteEncontrado2 = clienteEncontrado;
                 deleteCliente.getBtnEliminarCliente().addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        
+                        if (clienteEncontrado2 != null) {
+                            try {
+                                //crear url de peticion
+                                String strUrlDelete = "http://localhost:3001/eliminarCliente/?id=" + URLEncoder.encode(id2, "UTF-8");
+                                URL urlDelete = new URL(strUrlDelete);
+
+                                // Abre la conexión
+                                HttpURLConnection connection = (HttpURLConnection) urlDelete.openConnection();
+
+                                // Configura el método de la petición como DELETE
+                                connection.setRequestMethod("DELETE");
+
+                                // Obtiene el código de respuesta
+                                int responseCode = connection.getResponseCode();
+                                System.out.println("Código de respuesta: " + responseCode);
+
+                                // Cierra la conexión
+                                connection.disconnect();
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                            JOptionPane.showMessageDialog(null, "CLIENTE ELIMINADO CORRECTAMENTE");
+                        } 
+
                     }
                 });
 

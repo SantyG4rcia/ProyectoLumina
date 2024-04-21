@@ -5,7 +5,7 @@
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
 import com.Lumina.proyectolumina.gui.landingPage;
-import com.Lumina.proyectolumina.gui.vistaMenuAdmin;
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistaMenuAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;

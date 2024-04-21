@@ -7,14 +7,6 @@ package com.Lumina.proyectolumina.gui;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.charset.MalformedInputException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 

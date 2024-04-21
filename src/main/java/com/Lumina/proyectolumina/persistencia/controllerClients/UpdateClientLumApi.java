@@ -4,7 +4,7 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerClients;
 
-import com.Lumina.proyectolumina.gui.vistasClientes.vistaEditarCliente;
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.vistaEditarCliente;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
