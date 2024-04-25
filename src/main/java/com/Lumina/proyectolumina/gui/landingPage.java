@@ -4,6 +4,7 @@
  */
 package com.Lumina.proyectolumina.gui;
 
+import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
 import java.awt.Image;
@@ -64,7 +65,7 @@ public class landingPage extends javax.swing.JFrame {
         btnInicioSesion = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnHomeClients = new javax.swing.JButton();
         titulo_lp = new javax.swing.JLabel();
         descripcionLumina = new javax.swing.JLabel();
         lblDescripcion = new javax.swing.JLabel();
@@ -136,16 +137,16 @@ public class landingPage extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(627, 195, 248, -1));
 
-        jButton3.setBackground(new java.awt.Color(3, 90, 167));
-        jButton3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Empezar ahora");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnHomeClients.setBackground(new java.awt.Color(3, 90, 167));
+        btnHomeClients.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnHomeClients.setForeground(new java.awt.Color(255, 255, 255));
+        btnHomeClients.setText("Empezar ahora");
+        btnHomeClients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnHomeClientsActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 389, 167, 40));
+        jPanel1.add(btnHomeClients, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 389, 167, 40));
 
         titulo_lp.setFont(new java.awt.Font("Mulish ExtraBold", 1, 18)); // NOI18N
         titulo_lp.setForeground(new java.awt.Color(0, 0, 0));
@@ -181,9 +182,12 @@ public class landingPage extends javax.swing.JFrame {
         login.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnHomeClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeClientsActionPerformed
+       this.dispose();
+        vistaCatalogo catalogo = new vistaCatalogo();
+        catalogo.setVisible(true);
+        catalogo.setLocationRelativeTo(null); 
+    }//GEN-LAST:event_btnHomeClientsActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         this.dispose();
@@ -195,10 +199,10 @@ public class landingPage extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHomeClients;
     private javax.swing.JButton btnInicioSesion;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel descripcionLumina;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
