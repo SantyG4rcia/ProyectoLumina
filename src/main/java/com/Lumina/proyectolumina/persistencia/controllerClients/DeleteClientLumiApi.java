@@ -88,13 +88,13 @@ public class DeleteClientLumiApi {
                         deleteCliente.getCbMetodoPago().setSelectedItem(tPago);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN CLIENTE CON LA INFORMACION SUMINISTRADA");
-                        deleteCliente.dispose();
-                        listaClientes clientes = new listaClientes();
-                        GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
-                        clientes.setVisible(true);
-                        clientes.setLocationRelativeTo(null);
-                        break;
+//                        JOptionPane.showMessageDialog(null, "NO EXISTE NINGUN CLIENTE CON LA INFORMACION SUMINISTRADA");
+//                        deleteCliente.dispose();
+//                        listaClientes clientes = new listaClientes();
+//                        GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
+//                        clientes.setVisible(true);
+//                        clientes.setLocationRelativeTo(null);
+//                        break;
                     }
 
                 }
