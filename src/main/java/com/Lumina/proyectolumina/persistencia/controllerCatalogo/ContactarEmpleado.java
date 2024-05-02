@@ -15,9 +15,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,7 +23,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactarEmpleado {
 
-    public static void comtactarEmpleado(vistaContratarServicio3 hireService) {
+    public static void comtactarEmpleado(vistaContratarServicio3 hireService, String servicioSelec, String categoriaSelect) {
+        hireService.getLblCategoriaSelec().setText(categoriaSelect);
+        hireService.getLblServicioSelec().setText(servicioSelec);
+
         try {
             //crear url de conexion
             URL url = new URL("http://localhost:3001/empleados/");
@@ -55,17 +55,18 @@ public class ContactarEmpleado {
                 JsonObject jsonObject = element.getAsJsonObject();
                 String nombre = jsonObject.get("nombre").getAsString();
                 String cargo = jsonObject.get("cargo").getAsString();
-                randomValue = Math.random()*4.9;
+                randomValue = Math.random() * 4.9;
                 calificaciones = Math.round(randomValue * 10) / 10.0;
-                tabla.addRow(new Object[]{
-                    id, nombre, cargo, calificaciones
-                });
-                id++;
+                if (calificaciones >= 3) {
+                    tabla.addRow(new Object[]{
+                        id, nombre, cargo, calificaciones
+                    });
+                    id++;
+                }
             }
             // Actualizar la interfaz gráfica
             tabla.fireTableDataChanged();
-            
-            
+
             hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {

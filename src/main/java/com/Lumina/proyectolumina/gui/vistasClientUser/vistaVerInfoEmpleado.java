@@ -7,6 +7,9 @@ package com.Lumina.proyectolumina.gui.vistasClientUser;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,6 +40,38 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         lblPerfilUsu.setIcon(icon4);
     }
 
+    public JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public JLabel getLblCategoriaSelec() {
+        return lblCategoriaSelec;
+    }
+
+    public JLabel getLblServicioSelec() {
+        return lblServicioSelec;
+    }
+
+    public JTextField getTxtCargo() {
+        return txtCargo;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public JTextField getTxtPrecioServicio() {
+        return txtPrecioServicio;
+    }
+
+    public JTextField getTxtTelefono() {
+        return txtTelefono;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,8 +87,6 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         lblServicioSelec = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         txtCargo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
@@ -64,7 +97,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         txtCorreo = new javax.swing.JTextField();
-        txtSalario = new javax.swing.JTextField();
+        txtPrecioServicio = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblPerfilUsu = new javax.swing.JLabel();
@@ -104,26 +137,13 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         jLabel4.setText("CATEGORIA SELECCIONADA:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        txtDireccion.setEditable(false);
-        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDireccionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 170, -1));
-
-        jLabel7.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel7.setText("Direccion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
-
         txtCargo.setEditable(false);
         txtCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCargoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 170, -1));
+        jPanel1.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 31, 89));
@@ -136,7 +156,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 170, -1));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 170, -1));
 
         jLabel6.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(2, 31, 89));
@@ -145,13 +165,13 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel10.setText("Precio del servicio");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, -1, -1));
+        jLabel10.setText("Precio del servicio elegido");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(2, 31, 89));
         jLabel5.setText("Telefono");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
 
         txtNombre.setEditable(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +184,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(2, 31, 89));
         jLabel8.setText("Cargo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
 
         btnRegresar.setBackground(new java.awt.Color(3, 90, 167));
         btnRegresar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -185,13 +205,13 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         });
         jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 170, -1));
 
-        txtSalario.setEditable(false);
-        txtSalario.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecioServicio.setEditable(false);
+        txtPrecioServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSalarioActionPerformed(evt);
+                txtPrecioServicioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 170, -1));
+        jPanel1.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 170, -1));
 
         btnAceptar.setBackground(new java.awt.Color(4, 49, 140));
         btnAceptar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -230,24 +250,19 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 200, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalarioActionPerformed
+    private void txtPrecioServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSalarioActionPerformed
+    }//GEN-LAST:event_txtPrecioServicioActionPerformed
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
@@ -272,10 +287,6 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
 
     }//GEN-LAST:event_btnAceptarActionPerformed
-
-    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,7 +334,6 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -336,9 +346,8 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel lblServicioSelec;
     private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtSalario;
+    private javax.swing.JTextField txtPrecioServicio;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

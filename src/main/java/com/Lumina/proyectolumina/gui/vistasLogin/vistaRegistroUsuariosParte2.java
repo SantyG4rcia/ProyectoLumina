@@ -31,8 +31,12 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         return btnRegistarse;
     }
 
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+
     public JTextField getTxPasword() {
-        return txPasword;
+        return txtCofirnaPasword;
     }
 
     public JTextField getTxtCofirnaPasword() {
@@ -63,12 +67,12 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtNomUsuario = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txPasword = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtCofirnaPasword = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         btnRegistarse = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        txtCofirnaPasword = new javax.swing.JPasswordField();
+        txPasword1 = new javax.swing.JPasswordField();
 
         jPanel3.setBackground(new java.awt.Color(4, 49, 140));
 
@@ -160,21 +164,9 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(2, 31, 89));
         jLabel6.setText("Crear contraseña");
 
-        txPasword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txPaswordActionPerformed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(2, 31, 89));
         jLabel7.setText("Confirmar contraseña");
-
-        txtCofirnaPasword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCofirnaPaswordActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Mulish Black", 3, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(2, 31, 89));
@@ -200,6 +192,18 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
             }
         });
 
+        txtCofirnaPasword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCofirnaPaswordActionPerformed(evt);
+            }
+        });
+
+        txPasword1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txPasword1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -219,17 +223,19 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                        .addComponent(jLabel6)
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel7)
+                        .addGap(20, 20, 20))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCofirnaPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addComponent(txPasword1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCofirnaPasword)))
+                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,13 +250,14 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txPasword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCofirnaPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
-                    .addComponent(txtCofirnaPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addGap(71, 71, 71)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -277,14 +284,6 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomUsuarioActionPerformed
 
-    private void txPaswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPaswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txPaswordActionPerformed
-
-    private void txtCofirnaPaswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCofirnaPaswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCofirnaPaswordActionPerformed
-
     private void btnRegistarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistarseActionPerformed
@@ -295,6 +294,14 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
        newUser.setVisible(true);
        newUser.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void txtCofirnaPaswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCofirnaPaswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCofirnaPaswordActionPerformed
+
+    private void txPasword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPasword1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txPasword1ActionPerformed
 
   
 
@@ -313,8 +320,8 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblIconoLumina;
-    private javax.swing.JTextField txPasword;
-    private javax.swing.JTextField txtCofirnaPasword;
+    private javax.swing.JPasswordField txPasword1;
+    private javax.swing.JPasswordField txtCofirnaPasword;
     private javax.swing.JTextField txtNomUsuario;
     // End of variables declaration//GEN-END:variables
 }

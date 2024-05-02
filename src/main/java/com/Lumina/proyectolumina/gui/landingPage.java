@@ -7,6 +7,7 @@ package com.Lumina.proyectolumina.gui;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.contollerNewUsers.RegistroUsuarios;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -194,6 +195,7 @@ public class landingPage extends javax.swing.JFrame {
        vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
        newUser.setVisible(true);
        newUser.setLocationRelativeTo(null);
+        RegistroUsuarios.createUser(newUser);
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
 

@@ -8,10 +8,6 @@ import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio2;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio3;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -20,84 +16,77 @@ import javax.swing.JOptionPane;
  */
 public class GetInfoCliente {
 
-   
-     private static String[] prueba = {""};
+    private static String tipoUsuario[] = {""};
+    private static String nomEmpresa = "";
+    private static String telEmpresa = "";
+    private static String nombre = "";
+    private static String correo = "";
+    private static String telefono = "";
+    private static String direccion = "";
+    private static String tDocumento = "";
+    private static String nDocumento = "";
+    private static String tPago = "";
 
     public static void getInfoCliente(vistaContratarServicio2 hireService, String descripServicio, String nomServicio, String categoriaSelec) {
-        hireService.getTxtNombreEmpresa().setEditable(false);
-        hireService.getTxtTelefonoEmpresa().setEditable(false);
         hireService.getLblCategoriaSelec().setText(categoriaSelec);
         hireService.getLblServicioSelec().setText(nomServicio);
         hireService.getTxtAreaDescripcionServicio().setText(descripServicio);
-        // Variable de tipo array para almacenar el tipo de usuario
-      
-        selectTipoUsuario(hireService, prueba);
-        //prueba = pruebaExtreaeInfo(prueba);
-        System.out.println("Tipo de usuario fuera del museListener: "+prueba[0]);
-        
-        hireService.getBtnPaso3().addActionListener(new ActionListener() {
+
+        hireService.getCbTipoUsuario().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                hireService.dispose();
-                vistaContratarServicio3 hireService = new vistaContratarServicio3();
-                hireService.setVisible(true);
-                hireService.setLocationRelativeTo(null);
-                ContactarEmpleado.comtactarEmpleado(hireService);
-            }
-        });
-       
-
-    }
-
-    private static void selectTipoUsuario(vistaContratarServicio2 hireService, String[] x) {
-        
-        hireService.getCheckTrabajador().setSelected(true);
-        MouseListener mouseListener = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                String p;
-                if (hireService.getCheckEmpresario().isSelected() || hireService.getCheckTrabajador().isSelected()) {
-                    if (hireService.getCheckEmpresario().isSelected() && hireService.getCheckTrabajador().isSelected()) {
-                        JOptionPane.showMessageDialog(null, "SOLO DEBE SELECCIONAR UNA OPCION");
-                    } else if (hireService.getCheckEmpresario().isSelected()) {
-                        hireService.getTxtNombreEmpresa().setEditable(true);
-                        hireService.getTxtTelefonoEmpresa().setEditable(true);
-                        p = hireService.getCheckEmpresario().getText();
-                        
-                        x[0] = p;
-                        System.out.println("Tipo de usuario mouseListener: " + x[0]);
-                    } else if (hireService.getCheckTrabajador().isSelected()) {
-                        hireService.getTxtNombreEmpresa().setEditable(false);
-                        hireService.getTxtTelefonoEmpresa().setEditable(false);
-                         p = hireService.getCheckTrabajador().getText();
-                         x[0] = p;
-                        System.out.println("Tipo de usuario mouseListener: " + x[0]);
+                tipoUsuario[0] = setTipoUsuario(hireService, tipoUsuario);
+                if ("Empresario".equals(tipoUsuario[0])) {
+                    nomEmpresa = hireService.getTxtNombreEmpresa().getText();
+                    telEmpresa = hireService.getTxtTelefonoEmpresa().getText();
+                    if (!nomEmpresa.equals("") && !telEmpresa.equals("")) {
+                        System.out.println("Nombre empresa: " + nomEmpresa);
+                        System.out.println("Telefono de la empesa: " + telEmpresa);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "NO DEBE HABER CAMPOS VACIOS");
                     }
                 }
 
-            }         
-
-            @Override
-            public void mousePressed(MouseEvent e) {
             }
+        });
 
+        hireService.getBtnPaso3().addActionListener(new ActionListener() {
             @Override
-            public void mouseReleased(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                nombre = hireService.getTxtNombre().getText();
+                correo = hireService.getTxtCorreo().getText();
+                telefono = hireService.getTxtTelefono().getText();
+                direccion = hireService.getTxtDireccion().getText();
+                tDocumento = hireService.getCbTdocumento().getSelectedItem().toString();
+                nDocumento = hireService.getTxtNumDocumento().getText();
+                tPago = hireService.getCb_tPago().getSelectedItem().toString();
+
+                if (nombre.equals("") || tDocumento.equals("SELECCIONE") || nDocumento.equals("")
+                        || correo.equals("") || direccion.equals("") || telefono.equals("") || tPago.equals("SELECCIONE")) {
+
+                    JOptionPane.showMessageDialog(null, "HAY UNO O VARIOS CAMPOS VACIOS, VERIFIQUE LA INFORMACION E INTENTE DE NUEVO");
+
+                } else {
+                    hireService.dispose();
+                    vistaContratarServicio3 hireService = new vistaContratarServicio3();
+                    hireService.setVisible(true);
+                    hireService.setLocationRelativeTo(null);
+                    ContactarEmpleado.comtactarEmpleado(hireService, nomServicio, categoriaSelec);
+                }
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-            }
-        };
-
-        hireService.getCheckTrabajador().addMouseListener(mouseListener);
-        hireService.getCheckEmpresario().addMouseListener(mouseListener);
-
+        });
     }
-    
- 
+
+    private static String setTipoUsuario(vistaContratarServicio2 hireService, String[] tipoUsuario) {
+        if (hireService.getCbTipoUsuario().getSelectedItem().equals("Empresario")) {
+            hireService.getTxtNombreEmpresa().setEditable(true);
+            hireService.getTxtTelefonoEmpresa().setEditable(true);
+            tipoUsuario[0] = hireService.getCbTipoUsuario().getSelectedItem().toString();
+        } else if (hireService.getCbTipoUsuario().getSelectedItem().equals("Trabajador Independiente")) {
+            hireService.getTxtNombreEmpresa().setEditable(false);
+            hireService.getTxtTelefonoEmpresa().setEditable(false);
+            tipoUsuario[0] = hireService.getCbTipoUsuario().getSelectedItem().toString();
+        }
+        return tipoUsuario[0];
+    }
 }

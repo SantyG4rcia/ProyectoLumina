@@ -9,7 +9,6 @@ import java.awt.TextArea;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -57,13 +56,10 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         return cb_tPago;
     }
 
-    public JCheckBox getCheckEmpresario() {
-        return checkEmpresario;
+    public JComboBox<String> getCbTipoUsuario() {
+        return cbTipoUsuario;
     }
 
-    public JCheckBox getCheckTrabajador() {
-        return checkTrabajador;
-    }
 
     public JLabel getLblCategoriaSelec() {
         return lblCategoriaSelec;
@@ -115,6 +111,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        cbTipoUsuario = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnPaso3 = new javax.swing.JButton();
@@ -146,8 +143,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         lblServicioSelec = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        checkTrabajador = new javax.swing.JCheckBox();
-        checkEmpresario = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         lblPerfilUsu = new javax.swing.JLabel();
         lblNombreUsu = new javax.swing.JLabel();
@@ -160,6 +155,9 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empresario", "Trabajador Independiente" }));
+        jPanel1.add(cbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, -1));
 
         jLabel16.setFont(new java.awt.Font("Mulish Black", 3, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(2, 31, 89));
@@ -328,26 +326,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel2.setText("SERVICIO SELECCIONADO:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        checkTrabajador.setFont(new java.awt.Font("Mulish", 2, 14)); // NOI18N
-        checkTrabajador.setForeground(new java.awt.Color(0, 0, 0));
-        checkTrabajador.setText("Trabajador independiente");
-        checkTrabajador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkTrabajadorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(checkTrabajador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
-
-        checkEmpresario.setFont(new java.awt.Font("Mulish", 2, 14)); // NOI18N
-        checkEmpresario.setForeground(new java.awt.Color(0, 0, 0));
-        checkEmpresario.setText("Empresario");
-        checkEmpresario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkEmpresarioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(checkEmpresario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-
         jPanel2.setBackground(new java.awt.Color(51, 51, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(lblPerfilUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 70, 60));
@@ -383,14 +361,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void checkTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTrabajadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkTrabajadorActionPerformed
-
-    private void checkEmpresarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkEmpresarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkEmpresarioActionPerformed
 
     private void txtNombreEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEmpresaActionPerformed
         // TODO add your handling code here:
@@ -470,9 +440,8 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     private javax.swing.JButton btnPaso3;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbTdocumento;
+    private javax.swing.JComboBox<String> cbTipoUsuario;
     private javax.swing.JComboBox<String> cb_tPago;
-    private javax.swing.JCheckBox checkEmpresario;
-    private javax.swing.JCheckBox checkTrabajador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
