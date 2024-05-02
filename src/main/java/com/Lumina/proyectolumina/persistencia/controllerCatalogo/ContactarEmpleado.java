@@ -5,12 +5,16 @@
 package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio3;
+import com.Lumina.proyectolumina.gui.vistasClientUser.vistaVerInfoEmpleado;
+import com.Lumina.proyectolumina.persistencia.controllerEmpleados.GetEmpleadosLuminApi;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -49,30 +53,64 @@ public class ContactarEmpleado {
             JsonArray jsonArray = gson.fromJson(response.toString(), JsonArray.class);
             int id = 1;
             double randomValue;
-            double calificaciones;
+            double calificaciones = 0;
             DefaultTableModel tabla = (DefaultTableModel) hireService.getTbContratarEmpleado().getModel();
             for (JsonElement element : jsonArray) {
                 JsonObject jsonObject = element.getAsJsonObject();
                 String nombre = jsonObject.get("nombre").getAsString();
                 String cargo = jsonObject.get("cargo").getAsString();
                 randomValue = Math.random() * 4.9;
-                calificaciones = Math.round(randomValue * 10) / 10.0;
-                if (calificaciones >= 3) {
-                    tabla.addRow(new Object[]{
-                        id, nombre, cargo, calificaciones
-                    });
-                    id++;
+                if (randomValue >= 3) {
+                    calificaciones = Math.round(randomValue * 10) / 10.0;
                 }
+
+                tabla.addRow(new Object[]{
+                    id, nombre, cargo, calificaciones
+                });
+                id++;
             }
             // Actualizar la interfaz gráfica
             tabla.fireTableDataChanged();
 
-            hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
+            final DefaultTableModel tablaEmpleados = tabla;
+            MouseListener mouseListener = new MouseListener() {
                 @Override
-                public void actionPerformed(ActionEvent e) {
-                    
+                public void mouseClicked(MouseEvent e) {
+                    hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            vistaVerInfoEmpleado empleado = new vistaVerInfoEmpleado();
+                            int seleccion = hireService.getTbContratarEmpleado().getSelectedRow();
+                            empleado.getTxtNombre().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 1)));
+                            empleado.getTxtCargo().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 2)));
+                            empleado.getLblCategoriaSelec().setText(categoriaSelect);
+                            empleado.getLblServicioSelec().setText(servicioSelec);
+                            String nomEmpleado = String.valueOf(tablaEmpleados.getValueAt(seleccion, 1));
+                            GetEmpleadosLuminApi.getEmpleado(empleado, nomEmpleado);
+                            empleado.setVisible(true);
+                            empleado.setLocationRelativeTo(null);
+                        }
+                    });
+
                 }
-            });
+
+                @Override
+                public void mousePressed(MouseEvent e) {
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                }
+            };
+            hireService.getTbContratarEmpleado().addMouseListener(mouseListener);
 
             conn.disconnect();
 
