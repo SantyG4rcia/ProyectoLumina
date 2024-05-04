@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Lumina.proyectolumina.persistencia.controllerLogin.contollerNewUsers;
+package com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers;
 
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte2;
@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
  *
  * @author USUARIO
  */
-public class RegistroUsuarios {
+public class RegistroClientes {
 
     public static void createUser(vistaRegistroUsuariosParte1 newUser) {
         newUser.getBtnPaso2().addActionListener(new ActionListener() {
@@ -34,7 +34,7 @@ public class RegistroUsuarios {
                 vistaRegistroUsuariosParte2 newUserP2 = new vistaRegistroUsuariosParte2();
                 newUserP2.setVisible(true);
                 newUserP2.setLocationRelativeTo(null);
-                AddNewUser.addUser(newUser); //Envia los datos a la clase que gestiona el post de los clientes
+                AddNewUser.addClient(newUser); //Envia los datos a la clase que gestiona el post de los clientes
 
                 newUserP2.getBtnRegistarse().addActionListener(new ActionListener() {
                     @Override
@@ -99,7 +99,7 @@ public class RegistroUsuarios {
                                 conn.setRequestProperty("Content-Type", "application/json");
 
                                 String requestBody = "{"
-                                        + "\"userId\": \"" + id + "\","
+                                        + "\"id\": \"" + id + "\","
                                         + "\"username\": \"" + nombreUsu + "\","
                                         + "\"password\": \"" + confirmPassword + "\"}";
                                 

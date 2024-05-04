@@ -53,17 +53,14 @@ public class ContactarEmpleado {
             JsonArray jsonArray = gson.fromJson(response.toString(), JsonArray.class);
             int id = 1;
             double randomValue;
-            double calificaciones = 0;
+            double calificaciones;
             DefaultTableModel tabla = (DefaultTableModel) hireService.getTbContratarEmpleado().getModel();
             for (JsonElement element : jsonArray) {
                 JsonObject jsonObject = element.getAsJsonObject();
                 String nombre = jsonObject.get("nombre").getAsString();
                 String cargo = jsonObject.get("cargo").getAsString();
                 randomValue = Math.random() * 4.9;
-                if (randomValue >= 3) {
-                    calificaciones = Math.round(randomValue * 10) / 10.0;
-                }
-
+                calificaciones = Math.round(randomValue * 10) / 10.0;
                 tabla.addRow(new Object[]{
                     id, nombre, cargo, calificaciones
                 });

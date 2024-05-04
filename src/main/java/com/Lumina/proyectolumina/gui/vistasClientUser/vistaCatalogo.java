@@ -4,7 +4,9 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientUser;
 
+import com.Lumina.proyectolumina.gui.landingPage;
 import com.Lumina.proyectolumina.persistencia.controllerCatalogo.ContratarServicio;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,6 +69,8 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
      */
     public vistaCatalogo() {
         initComponents();
+        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
+        jmiEditarPerfil.addActionListener(controllerActioUser);
 
         btnServicio1.addActionListener(this);
         btnServicio2.addActionListener(this);
@@ -202,7 +206,11 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpmAcionesUsuario = new javax.swing.JPopupMenu();
+        jmiEditarPerfil = new javax.swing.JMenuItem();
+        jmiCerrarSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
+        lblNombreUsu = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnServicio5 = new javax.swing.JButton();
         lblIconoServicio5 = new javax.swing.JLabel();
@@ -225,16 +233,29 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
         lblParrafo1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblPerfilUsu = new javax.swing.JLabel();
-        lblNombreUsu = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lblIconoLumina = new javax.swing.JLabel();
         lblDegradado = new javax.swing.JLabel();
         jPanelFondo = new javax.swing.JLabel();
 
+        jmiEditarPerfil.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiEditarPerfil.setText("Editar perfil");
+        jpmAcionesUsuario.add(jmiEditarPerfil);
+
+        jmiCerrarSesion.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiCerrarSesion.setText("Cerrar sesion");
+        jpmAcionesUsuario.add(jmiCerrarSesion);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNombreUsu.setFont(new java.awt.Font("Mulish Light", 0, 14)); // NOI18N
+        lblNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreUsu.setText("Nombre de usuario");
+        lblNombreUsu.setComponentPopupMenu(jpmAcionesUsuario);
+        jPanel1.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, -1));
 
         btnRegresar.setBackground(new java.awt.Color(3, 90, 167));
         btnRegresar.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -357,11 +378,6 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(lblPerfilUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 70, 60));
 
-        lblNombreUsu.setFont(new java.awt.Font("Mulish Light", 0, 14)); // NOI18N
-        lblNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreUsu.setText("Nombre de usuario");
-        jPanel2.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, -1));
-
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Mulish Black", 1, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -411,9 +427,9 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         this.dispose();
-        vistaCatalogo catalogo = new vistaCatalogo();
-        catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null);
+        landingPage lp = new landingPage();
+        lp.setVisible(true);
+        lp.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
@@ -464,6 +480,9 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel jPanelFondo;
+    private javax.swing.JMenuItem jmiCerrarSesion;
+    private javax.swing.JMenuItem jmiEditarPerfil;
+    private javax.swing.JPopupMenu jpmAcionesUsuario;
     private javax.swing.JLabel lblDegradado;
     private javax.swing.JLabel lblDescripcionsServicio1;
     private javax.swing.JLabel lblDescripcionsServicio2;

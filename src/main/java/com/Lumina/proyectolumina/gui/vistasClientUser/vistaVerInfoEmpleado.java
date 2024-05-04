@@ -4,6 +4,7 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientUser;
 
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -22,8 +23,10 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
      */
     public vistaVerInfoEmpleado() {
         initComponents();
-        
-         ImageIcon iconLumina1 = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
+        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
+        jmiEditarPerfil.addActionListener(controllerActioUser);
+
+        ImageIcon iconLumina1 = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon1 = new ImageIcon(iconLumina1.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon1);
 
@@ -81,6 +84,9 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpmAcionesUsuario = new javax.swing.JPopupMenu();
+        jmiEditarPerfil = new javax.swing.JMenuItem();
+        jmiCerrarSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         lblCategoriaSelec = new javax.swing.JLabel();
@@ -106,6 +112,14 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         lblIconoLumina = new javax.swing.JLabel();
         lblDegradado = new javax.swing.JLabel();
         jPanelFondo = new javax.swing.JLabel();
+
+        jmiEditarPerfil.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiEditarPerfil.setText("Editar perfil");
+        jpmAcionesUsuario.add(jmiEditarPerfil);
+
+        jmiCerrarSesion.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiCerrarSesion.setText("Cerrar sesion");
+        jpmAcionesUsuario.add(jmiCerrarSesion);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -231,6 +245,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         lblNombreUsu.setFont(new java.awt.Font("Mulish Light", 0, 14)); // NOI18N
         lblNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsu.setText("Nombre de usuario");
+        lblNombreUsu.setComponentPopupMenu(jpmAcionesUsuario);
         jPanel2.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -281,7 +296,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCargoActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        
+
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -338,6 +353,9 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jPanelFondo;
+    private javax.swing.JMenuItem jmiCerrarSesion;
+    private javax.swing.JMenuItem jmiEditarPerfil;
+    private javax.swing.JPopupMenu jpmAcionesUsuario;
     private javax.swing.JLabel lblCategoriaSelec;
     private javax.swing.JLabel lblDegradado;
     private javax.swing.JLabel lblIconoLumina;

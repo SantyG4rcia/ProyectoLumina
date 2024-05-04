@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Lumina.proyectolumina.persistencia.controllerLogin.contollerNewUsers;
+package com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers;
 
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
 import java.io.BufferedReader;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author USUARIO
  */
 public class AddNewUser {
-    public static void addUser(vistaRegistroUsuariosParte1 newUser){
+    public static void addClient(vistaRegistroUsuariosParte1 newUser){
         String nomCliente = newUser.getTxtNombre().getText();
         String tDocuCliente = String.valueOf(newUser.getCbTipoDocumento().getSelectedItem());
         String nDocuCliente = newUser.getTxtNumDocumento().getText();

@@ -4,6 +4,7 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientUser;
 
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.Image;
 import java.awt.TextArea;
 import javax.swing.Icon;
@@ -11,7 +12,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 /**
  *
@@ -33,6 +33,8 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
 
     public vistaContrararServicio1() {
         initComponents();
+        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
+        jmiEditarPerfil.addActionListener(controllerActioUser);
 
         lblInfoTservicio.setText(formatearTexto(txtInfo));
         // agregando imagenes al banner y la ventana de fondo
@@ -69,7 +71,6 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         return cbSelectServicio;
     }
 
-   
     public String formatearTexto(String texto) {
         return "<html><p>" + texto + "</p></html>";
     }
@@ -83,6 +84,9 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpmAcionesUsuario = new javax.swing.JPopupMenu();
+        jmiEditarPerfil = new javax.swing.JMenuItem();
+        jmiCerrarSesion = new javax.swing.JMenuItem();
         jPanel3 = new javax.swing.JPanel();
         cbSelectServicio = new javax.swing.JComboBox<>();
         txtAreaDescripcionServicio = new java.awt.TextArea();
@@ -105,6 +109,14 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         lblCategoriaSelec1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+
+        jmiEditarPerfil.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiEditarPerfil.setText("Editar perfil");
+        jpmAcionesUsuario.add(jmiEditarPerfil);
+
+        jmiCerrarSesion.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        jmiCerrarSesion.setText("Cerrar sesion");
+        jpmAcionesUsuario.add(jmiCerrarSesion);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -179,6 +191,8 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         lblNombreUsu.setFont(new java.awt.Font("Mulish Light", 0, 14)); // NOI18N
         lblNombreUsu.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreUsu.setText("Nombre de usuario");
+        lblNombreUsu.setComponentPopupMenu(jpmAcionesUsuario);
+        lblNombreUsu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(lblNombreUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -233,7 +247,7 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         this.dispose();
         vistaCatalogo catalogo = new vistaCatalogo();
         catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null); 
+        catalogo.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
@@ -286,6 +300,9 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel jPanelFondo;
+    private javax.swing.JMenuItem jmiCerrarSesion;
+    private javax.swing.JMenuItem jmiEditarPerfil;
+    private javax.swing.JPopupMenu jpmAcionesUsuario;
     private javax.swing.JLabel lblCategoriaSelec;
     private javax.swing.JLabel lblCategoriaSelec1;
     private javax.swing.JLabel lblDegradado;

@@ -5,6 +5,7 @@
 package com.Lumina.proyectolumina.persistencia.controllerClients;
 
 import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.vistaEditarCliente;
+import com.Lumina.proyectolumina.gui.vistasLogin.vistaActualizarPerfilUsuario;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -139,7 +140,7 @@ public class UpdateClientLumApi {
                                     String tDocumentoV = String.valueOf(editCliente.getCb_TipoDocumento().getSelectedItem());
                                     String nDocumentoV = editCliente.getTxtNomDocumento().getText();
                                     String tPagoV = String.valueOf(editCliente.getCbMetodoPago().getSelectedItem());
-                                    
+
                                     System.out.println("Mostrando informacion de los componentes antes de envarla al servidor");
                                     System.out.println("id: " + id2);
                                     System.out.println("Nombre: " + nombreV);
@@ -173,7 +174,7 @@ public class UpdateClientLumApi {
                                     if (!"SELECCIONE".equals(tPagoV)) {
                                         dataMap.put("tPago", tPagoV);
                                     }
-                                    
+
                                     System.out.println("Mostrando el objeto Json q se va aenviar");
                                     System.out.println(dataMap);
 
@@ -225,4 +226,140 @@ public class UpdateClientLumApi {
         }
     }
 
+    public static void UpdateClient(vistaActualizarPerfilUsuario updateClient, String idClient, String userId) {
+        try {
+            // hacer la peticion get para saber el registro a editar
+            String strUrl = "http://localhost:3001/actualizarCliente/?id=" + URLEncoder.encode(idClient, "UTF-8");
+            URL url = new URL(strUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("PUT");
+
+            // se menciona el tipo de contenido a enviar
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            // permite el envio de datos
+            conn.setDoOutput(true);
+
+            //obtener la informacion del cliente a editar
+            String nombre = updateClient.getTxtNombre().getText();
+            String correo = updateClient.getTxtCorreo().getText();
+            String direccion = updateClient.getTxtDireccion().getText();
+            String telefono = updateClient.getTxtTelefono().getText();
+            String tipoDocu = String.valueOf(updateClient.getCb_TipoDocumento().getSelectedItem());
+            String numDocumento = updateClient.getTxtNomDocumento().getText();
+            String metodoPago = String.valueOf(updateClient.getCbMetodoPago().getSelectedItem());
+
+            if (nombre.equals("") || correo.equals("") || direccion.equals("") || telefono.equals("")
+                    || tipoDocu.equals("SELECCIONE") || numDocumento.equals("") || metodoPago.equals("SELECCIONE")) {
+                JOptionPane.showMessageDialog(null, "HAY UNO O VARIOS CAMPOS VACIOS, VERIFIQUE LA INFORMACION E INTENTE DE NUEVO");
+            } else {
+                String requestBody = "{"
+                        + "\"id\": \"" + idClient + "\","
+                        + "\"nombre\": \"" + nombre + "\","
+                        + "\"correo\": \"" + correo + "\","
+                        + "\"direccion\": \"" + direccion + "\","
+                        + "\"telefono\": \"" + telefono + "\","
+                        + "\"tDocumento\": \"" + tipoDocu + "\","
+                        + "\"nDocumento\": \"" + numDocumento + "\","
+                        + "\"tPago\": \"" + metodoPago + "\"}";
+
+                System.out.println("Mostrando el json antes de enviar");
+                System.out.println(requestBody);
+
+                OutputStream outputStream = conn.getOutputStream();
+
+                // Escribir cuerpo de la solicitud en el flujo de salida
+                outputStream.write(requestBody.getBytes());
+                outputStream.flush();
+                outputStream.close();
+
+                // Obtener código de respuesta
+                int responseCode = conn.getResponseCode();
+                System.out.println("Código de respuesta: " + responseCode);
+
+                // Leer respuesta del servidor
+                BufferedReader reader;
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                } else {
+                    reader = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                }
+                String inputLine;
+                StringBuilder response2 = new StringBuilder();
+                while ((inputLine = reader.readLine()) != null) {
+                    response2.append(inputLine);
+                }
+                reader.close();
+
+                // Imprimir respuesta del servidor
+                System.out.println("Respuesta del servidor: " + response2.toString());
+                conn.disconnect();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // hacer la peticion get para saber el registro a editar
+            String strUrl = "http://localhost:3001/actualizarUsuario/?id=" + URLEncoder.encode(userId, "UTF-8");
+            URL url = new URL(strUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("PUT");
+
+            // se menciona el tipo de contenido a enviar
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            // permite el envio de datos
+            conn.setDoOutput(true);
+
+            // obtener informacion del usuario
+            String userName = updateClient.getTxtNomUsuario().getText();
+            String password = updateClient.getTxtPassword().getText();
+
+            if (userName.equals("") || password.equals("")) {
+                JOptionPane.showMessageDialog(null, "HAY UNO O VARIOS CAMPOS VACIOS, VERIFIQUE LA INFORMACION E INTENTE DE NUEVO");
+            } else {
+                String requestBody = "{"
+                        + "\"id\": \"" + userId + "\","
+                        + "\"username\": \"" + userName + "\","
+                        + "\"password\": \"" + password + "\"}";
+
+                System.out.println("Mostrando el json antes de enviar");
+                System.out.println(requestBody);
+
+                OutputStream outputStream = conn.getOutputStream();
+
+                // Escribir cuerpo de la solicitud en el flujo de salida
+                outputStream.write(requestBody.getBytes());
+                outputStream.flush();
+                outputStream.close();
+
+                // Obtener código de respuesta
+                int responseCode = conn.getResponseCode();
+                System.out.println("Código de respuesta: " + responseCode);
+
+                // Leer respuesta del servidor
+                BufferedReader reader;
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                } else {
+                    reader = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                }
+                String inputLine;
+                StringBuilder response2 = new StringBuilder();
+                while ((inputLine = reader.readLine()) != null) {
+                    response2.append(inputLine);
+                }
+                reader.close();
+
+                // Imprimir respuesta del servidor
+                System.out.println("Respuesta del servidor: " + response2.toString());
+                conn.disconnect();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
