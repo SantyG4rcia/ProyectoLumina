@@ -4,7 +4,7 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientUser;
 
-import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
+
 import java.awt.Image;
 import java.awt.TextArea;
 import javax.swing.Icon;
@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -33,8 +34,7 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
 
     public vistaContrararServicio1() {
         initComponents();
-        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
-        jmiEditarPerfil.addActionListener(controllerActioUser);
+
 
         lblInfoTservicio.setText(formatearTexto(txtInfo));
         // agregando imagenes al banner y la ventana de fondo
@@ -53,6 +53,18 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         ImageIcon iconoPerfil = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/icono perfil.png");
         Icon icon4 = new ImageIcon(iconoPerfil.getImage().getScaledInstance(lblPerfilUsu.getWidth(), lblPerfilUsu.getHeight(), Image.SCALE_SMOOTH));
         lblPerfilUsu.setIcon(icon4);
+    }
+
+    public JMenuItem getJmiCerrarSesion() {
+        return jmiCerrarSesion;
+    }
+
+    public JMenuItem getJmiEditarPerfil() {
+        return jmiEditarPerfil;
+    }
+
+    public JLabel getLblNombreUsu() {
+        return lblNombreUsu;
     }
 
     public JButton getBtnPaso2() {

@@ -6,6 +6,7 @@ package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio2;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio3;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -27,10 +28,12 @@ public class GetInfoCliente {
     private static String nDocumento = "";
     private static String tPago = "";
 
-    public static void getInfoCliente(vistaContratarServicio2 hireService, String descripServicio, String nomServicio, String categoriaSelec) {
+    public static void getInfoCliente(vistaContratarServicio2 hireService, String descripServicio, String nomServicio, String categoriaSelec, String nomUsuario) {
+        hireService.getLblNombreUsu().setText(nomUsuario);
         hireService.getLblCategoriaSelec().setText(categoriaSelec);
         hireService.getLblServicioSelec().setText(nomServicio);
         hireService.getTxtAreaDescripcionServicio().setText(descripServicio);
+        controllerOptionSelected.seleccionerVista(hireService);
 
         hireService.getCbTipoUsuario().addActionListener(new ActionListener() {
             @Override
@@ -71,7 +74,7 @@ public class GetInfoCliente {
                     vistaContratarServicio3 hireService = new vistaContratarServicio3();
                     hireService.setVisible(true);
                     hireService.setLocationRelativeTo(null);
-                    ContactarEmpleado.comtactarEmpleado(hireService, nomServicio, categoriaSelec);
+                    ContactarEmpleado.comtactarEmpleado(hireService, nomServicio, categoriaSelec, nomUsuario);
                 }
             }
         });

@@ -8,6 +8,8 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -27,6 +29,10 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         lblIconoLumina.setIcon(icon2);
     }
 
+    public JCheckBox getChekShowPassword() {
+        return chekShowPassword;
+    }
+
     public JButton getBtnRegistarse() {
         return btnRegistarse;
     }
@@ -35,17 +41,18 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         return btnRegresar;
     }
 
-    public JTextField getTxPasword() {
-        return txtCofirnaPasword;
-    }
-
-    public JTextField getTxtCofirnaPasword() {
+    public JPasswordField getTxtCofirnaPasword() {
         return txtCofirnaPasword;
     }
 
     public JTextField getTxtNomUsuario() {
         return txtNomUsuario;
     }
+
+    public JPasswordField getTxtPasword() {
+        return txtPasword;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,7 +79,8 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         btnRegistarse = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         txtCofirnaPasword = new javax.swing.JPasswordField();
-        txPasword1 = new javax.swing.JPasswordField();
+        txtPasword = new javax.swing.JPasswordField();
+        chekShowPassword = new javax.swing.JCheckBox();
 
         jPanel3.setBackground(new java.awt.Color(4, 49, 140));
 
@@ -131,7 +139,7 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
                 .addComponent(lblIconoLumina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel2)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,9 +206,18 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
             }
         });
 
-        txPasword1.addActionListener(new java.awt.event.ActionListener() {
+        txtPasword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txPasword1ActionPerformed(evt);
+                txtPaswordActionPerformed(evt);
+            }
+        });
+
+        chekShowPassword.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        chekShowPassword.setForeground(new java.awt.Color(0, 0, 0));
+        chekShowPassword.setText("Mostrar contraseña");
+        chekShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chekShowPasswordActionPerformed(evt);
             }
         });
 
@@ -215,27 +232,38 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
                 .addGap(156, 156, 156))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnRegresar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnRegistarse))
+                        .addComponent(chekShowPassword)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel11))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel7)
-                        .addGap(20, 20, 20))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txPasword1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCofirnaPasword)))
-                .addGap(35, 35, 35))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel11)
+                                                .addGap(55, 55, 55))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(55, 55, 55)))
+                                        .addComponent(jLabel6)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(36, 36, 36))
+                                    .addComponent(txtCofirnaPasword)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRegresar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRegistarse)))
+                        .addGap(35, 35, 35))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,20 +272,18 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txPasword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCofirnaPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNomUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCofirnaPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(chekShowPassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -299,15 +325,20 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCofirnaPaswordActionPerformed
 
-    private void txPasword1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPasword1ActionPerformed
+    private void txtPaswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPaswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txPasword1ActionPerformed
+    }//GEN-LAST:event_txtPaswordActionPerformed
+
+    private void chekShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chekShowPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chekShowPasswordActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistarse;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JCheckBox chekShowPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -320,8 +351,8 @@ public class vistaRegistroUsuariosParte2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblIconoLumina;
-    private javax.swing.JPasswordField txPasword1;
     private javax.swing.JPasswordField txtCofirnaPasword;
     private javax.swing.JTextField txtNomUsuario;
+    private javax.swing.JPasswordField txtPasword;
     // End of variables declaration//GEN-END:variables
 }

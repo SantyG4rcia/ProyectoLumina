@@ -4,12 +4,13 @@
  */
 package com.Lumina.proyectolumina.gui.vistasClientUser;
 
-import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
+
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JTextField;
 
 /**
@@ -23,8 +24,7 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
      */
     public vistaVerInfoEmpleado() {
         initComponents();
-        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
-        jmiEditarPerfil.addActionListener(controllerActioUser);
+
 
         ImageIcon iconLumina1 = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon1 = new ImageIcon(iconLumina1.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
@@ -41,6 +41,18 @@ public class vistaVerInfoEmpleado extends javax.swing.JFrame {
         ImageIcon iconoPerfil = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/icono perfil.png");
         Icon icon4 = new ImageIcon(iconoPerfil.getImage().getScaledInstance(lblPerfilUsu.getWidth(), lblPerfilUsu.getHeight(), Image.SCALE_SMOOTH));
         lblPerfilUsu.setIcon(icon4);
+    }
+
+    public JMenuItem getJmiCerrarSesion() {
+        return jmiCerrarSesion;
+    }
+
+    public JMenuItem getJmiEditarPerfil() {
+        return jmiEditarPerfil;
+    }
+
+    public JLabel getLblNombreUsu() {
+        return lblNombreUsu;
     }
 
     public JButton getBtnAceptar() {

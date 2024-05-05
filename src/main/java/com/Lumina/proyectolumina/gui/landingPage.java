@@ -8,6 +8,7 @@ import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaRegistroUsuariosParte1;
 import com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers.RegistroClientes;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerUserActions.IniciarSesion;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -20,41 +21,40 @@ public class landingPage extends javax.swing.JFrame {
 
     private String textoTitulo = "Mejore sus ventas y productividad\n "
             + "con Lumina";
-    
-    private String parrafoDescripcionLumina = "¿Está buscando una manera de mejorar la imagen de su\n" +
-    "empresa y destacar en el mercado? ¡Nuestra agencia de\n" +
-    "diseño puede ayudarte! Ofrecemos una amplia gama de\n" +
-    "servicios de diseño gráfico, desde la creación de logotipos\n" +
-    "hasta el diseño de sitios web y materiales de marketing.\n" +
-    "Nuestro equipo de diseñadores altamente calificados\n" +
-    "trabajará con usted para crear una imagen única y atractiva\n" +
-    "para su empresa. ¡No dudes en ponerte en contacto con\n" +
-    "nosotros para obtener más información sobre cómo\n" +
-    "podemos ayudarte a alcanzar sus objetivos!";
-    
-    
+
+    private String parrafoDescripcionLumina = "¿Está buscando una manera de mejorar la imagen de su\n"
+            + "empresa y destacar en el mercado? ¡Nuestra agencia de\n"
+            + "diseño puede ayudarte! Ofrecemos una amplia gama de\n"
+            + "servicios de diseño gráfico, desde la creación de logotipos\n"
+            + "hasta el diseño de sitios web y materiales de marketing.\n"
+            + "Nuestro equipo de diseñadores altamente calificados\n"
+            + "trabajará con usted para crear una imagen única y atractiva\n"
+            + "para su empresa. ¡No dudes en ponerte en contacto con\n"
+            + "nosotros para obtener más información sobre cómo\n"
+            + "podemos ayudarte a alcanzar sus objetivos!";
+
     public landingPage() {
         initComponents();
         titulo_lp.setText(strTohuml(textoTitulo));
         descripcionLumina.setText(formatearTexto(parrafoDescripcionLumina));
-        
+
         ImageIcon imageicon = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/Imagen  descriptiva lumina.png");
         Icon icon = new ImageIcon(imageicon.getImage().getScaledInstance(lblDescripcion.getWidth(), lblDescripcion.getHeight(), Image.SCALE_SMOOTH));
         lblDescripcion.setIcon(icon);
-        
+
         ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon2);
     }
 
-    public String strTohuml (String texto) {
-        return "<html><p>" +texto+ "</p></html>";
+    public String strTohuml(String texto) {
+        return "<html><p>" + texto + "</p></html>";
     }
-    
-    public String formatearTexto (String texto) {
-        return "<html><p>" +texto+ "</p></html>";
+
+    public String formatearTexto(String texto) {
+        return "<html><p>" + texto + "</p></html>";
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -178,26 +178,27 @@ public class landingPage extends javax.swing.JFrame {
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
         this.dispose();
+        vistaCatalogo catalogo = new vistaCatalogo();
         vistaInicioSesion login = new vistaInicioSesion();
         login.setVisible(true);
         login.setLocationRelativeTo(null);
+        IniciarSesion.login(login, catalogo);
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void btnHomeClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeClientsActionPerformed
-       this.dispose();
+        this.dispose();
         vistaCatalogo catalogo = new vistaCatalogo();
         catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null); 
+        catalogo.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnHomeClientsActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         this.dispose();
-       vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
-       newUser.setVisible(true);
-       newUser.setLocationRelativeTo(null);
+        vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
+        newUser.setVisible(true);
+        newUser.setLocationRelativeTo(null);
         RegistroClientes.createUser(newUser);
     }//GEN-LAST:event_btnRegistrarseActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

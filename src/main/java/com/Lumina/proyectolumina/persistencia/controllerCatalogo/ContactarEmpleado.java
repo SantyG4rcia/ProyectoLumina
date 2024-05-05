@@ -7,6 +7,7 @@ package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio3;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaVerInfoEmpleado;
 import com.Lumina.proyectolumina.persistencia.controllerEmpleados.GetEmpleadosLuminApi;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -27,7 +28,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ContactarEmpleado {
 
-    public static void comtactarEmpleado(vistaContratarServicio3 hireService, String servicioSelec, String categoriaSelect) {
+    public static void comtactarEmpleado(vistaContratarServicio3 hireService, String servicioSelec, String categoriaSelect, String nomUsuario) {
+        hireService.getLblNombreUsu().setText(nomUsuario);
         hireService.getLblCategoriaSelec().setText(categoriaSelect);
         hireService.getLblServicioSelec().setText(servicioSelec);
 
@@ -86,6 +88,7 @@ public class ContactarEmpleado {
                             GetEmpleadosLuminApi.getEmpleado(empleado, nomEmpleado);
                             empleado.setVisible(true);
                             empleado.setLocationRelativeTo(null);
+                            controllerOptionSelected.seleccionerVista(empleado);
                         }
                     });
 

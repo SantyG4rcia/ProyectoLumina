@@ -4,7 +4,6 @@
  */
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
-import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -26,8 +25,7 @@ public class vistaActualizarPerfilUsuario extends javax.swing.JFrame {
      */
     public vistaActualizarPerfilUsuario() {
         initComponents();
-          controllerOptionSelected controllerActioUser = new controllerOptionSelected();
-        jmiEditarPerfil.addActionListener(controllerActioUser);
+
 
         ImageIcon iconLumina1 = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon1 = new ImageIcon(iconLumina1.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
@@ -48,6 +46,10 @@ public class vistaActualizarPerfilUsuario extends javax.swing.JFrame {
 
     public JLabel getLblNombreUsu() {
         return lblNombreUsu;
+    }
+
+    public JButton getBtnRegresar() {
+        return btnRegresar;
     }
 
     public JButton getBtnEditarPerfil() {

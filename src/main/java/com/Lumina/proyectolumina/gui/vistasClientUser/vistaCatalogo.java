@@ -6,13 +6,14 @@ package com.Lumina.proyectolumina.gui.vistasClientUser;
 
 import com.Lumina.proyectolumina.gui.landingPage;
 import com.Lumina.proyectolumina.persistencia.controllerCatalogo.ContratarServicio;
-import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -69,8 +70,7 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
      */
     public vistaCatalogo() {
         initComponents();
-        controllerOptionSelected controllerActioUser = new controllerOptionSelected();
-        jmiEditarPerfil.addActionListener(controllerActioUser);
+ 
 
         btnServicio1.addActionListener(this);
         btnServicio2.addActionListener(this);
@@ -167,6 +167,18 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
         Icon icon4 = new ImageIcon(iconoPerfil.getImage().getScaledInstance(lblPerfilUsu.getWidth(), lblPerfilUsu.getHeight(), Image.SCALE_SMOOTH));
         lblPerfilUsu.setIcon(icon4);
 
+    }
+
+    public JMenuItem getJmiCerrarSesion() {
+        return jmiCerrarSesion;
+    }
+
+    public JMenuItem getJmiEditarPerfil() {
+        return jmiEditarPerfil;
+    }
+
+    public JLabel getLblNombreUsu() {
+        return lblNombreUsu;
     }
 
     public JButton getBtnServicio1() {
@@ -507,30 +519,30 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
             this.dispose();
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-            ContratarServicio.selectService(hireService, btnServicio1.getText());
+            ContratarServicio.selectService(hireService, btnServicio1.getText(), lblNombreUsu.getText());
         } else if (e.getSource().equals(btnServicio2)) {
             this.dispose();
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-            ContratarServicio.selectService(hireService, btnServicio2.getText());
+            ContratarServicio.selectService(hireService, btnServicio2.getText(), lblNombreUsu.getText());
 
         } else if (e.getSource().equals(btnServicio3)) {
             this.dispose();
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-            ContratarServicio.selectService(hireService, btnServicio3.getText());
+            ContratarServicio.selectService(hireService, btnServicio3.getText(), lblNombreUsu.getText());
 
         } else if (e.getSource().equals(btnServicio4)) {
             this.dispose();
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-            ContratarServicio.selectService(hireService, btnServicio4.getText());
+            ContratarServicio.selectService(hireService, btnServicio4.getText(), lblNombreUsu.getText());
 
         } else if (e.getSource().equals(btnServicio5)) {
             this.dispose();
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-            ContratarServicio.selectService(hireService, btnServicio5.getText());
+            ContratarServicio.selectService(hireService, btnServicio5.getText(), lblNombreUsu.getText());
         }
     }
 

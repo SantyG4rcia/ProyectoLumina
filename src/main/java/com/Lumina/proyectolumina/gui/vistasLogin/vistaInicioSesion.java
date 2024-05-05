@@ -5,11 +5,13 @@
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
 import com.Lumina.proyectolumina.gui.landingPage;
-import com.Lumina.proyectolumina.gui.vistasAdminUser.vistaMenuAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -25,6 +27,26 @@ public class vistaInicioSesion extends javax.swing.JFrame {
          ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon2);
+    }
+
+    public JButton getBtnInicioSesion() {
+        return btnInicioSesion;
+    }
+
+    public JButton getBtnRecuperarContraseña() {
+        return btnRecuperarContraseña;
+    }
+
+    public JCheckBox getChekShowPassword() {
+        return chekShowPassword;
+    }
+
+    public JPasswordField getTxtPasword() {
+        return txtPasword;
+    }
+
+    public JTextField getTxtUser() {
+        return txtUser;
     }
 
     /**
@@ -48,10 +70,11 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnRecuperarContraseña = new javax.swing.JButton();
         btnBackHome = new javax.swing.JButton();
         btnInicioSesion = new javax.swing.JButton();
         txtPasword = new javax.swing.JPasswordField();
+        chekShowPassword = new javax.swing.JCheckBox();
 
         jPanel2.setBackground(new java.awt.Color(4, 49, 140));
 
@@ -151,7 +174,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel3.setText("Nombre de usuario o correo electronico");
+        jLabel3.setText("Nombre de usuario");
 
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,13 +186,13 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(2, 31, 89));
         jLabel5.setText("Contraseña");
 
-        jButton3.setBackground(new java.awt.Color(4, 49, 140));
-        jButton3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Recuperar contraseña");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnRecuperarContraseña.setBackground(new java.awt.Color(4, 49, 140));
+        btnRecuperarContraseña.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnRecuperarContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecuperarContraseña.setText("Recuperar contraseña");
+        btnRecuperarContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnRecuperarContraseñaActionPerformed(evt);
             }
         });
 
@@ -193,26 +216,37 @@ public class vistaInicioSesion extends javax.swing.JFrame {
             }
         });
 
+        chekShowPassword.setFont(new java.awt.Font("Mulish", 0, 12)); // NOI18N
+        chekShowPassword.setForeground(new java.awt.Color(0, 0, 0));
+        chekShowPassword.setText("Mostrar contraseña");
+        chekShowPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chekShowPasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(54, 54, 54)
                 .addComponent(btnBackHome)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnRecuperarContraseña)
                 .addGap(18, 18, 18)
                 .addComponent(btnInicioSesion)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
-                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                    .addComponent(txtPasword))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chekShowPassword)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5)
+                        .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                        .addComponent(txtPasword)
+                        .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -227,12 +261,14 @@ public class vistaInicioSesion extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPasword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
+                .addComponent(chekShowPassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackHome)
-                    .addComponent(jButton3)
+                    .addComponent(btnRecuperarContraseña)
                     .addComponent(btnInicioSesion))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -257,9 +293,9 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnRecuperarContraseñaActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
          this.dispose();
@@ -274,26 +310,22 @@ public class vistaInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
-        String user = "el_juaker3000";
-        String pasword = "1234";
-        if (txtUser.getText().equals(user) && txtPasword.getText().equals(pasword)) {
-            this.dispose();
-            vistaMenuAdmin admin = new vistaMenuAdmin();
-            admin.setVisible(true);
-            admin.setLocationRelativeTo(null);
-        } else {
-              JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS, INTENTE DE NUEVO");
-        }
+  
     }//GEN-LAST:event_btnInicioSesionActionPerformed
+
+    private void chekShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chekShowPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chekShowPasswordActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackHome;
     private javax.swing.JButton btnInicioSesion;
+    private javax.swing.JButton btnRecuperarContraseña;
+    private javax.swing.JCheckBox chekShowPassword;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

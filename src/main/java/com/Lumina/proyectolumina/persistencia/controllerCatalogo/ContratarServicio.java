@@ -7,6 +7,7 @@ package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContrararServicio1;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio2;
 import com.Lumina.proyectolumina.persistencia.controllerCatalogo.GetInfoCliente;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.controllerOptionSelected;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -25,8 +26,10 @@ import javax.swing.JOptionPane;
  */
 public class ContratarServicio {
 
-    public static void selectService(vistaContrararServicio1 hireService, String categoriaSeleccionada) {
+    public static void selectService(vistaContrararServicio1 hireService, String categoriaSeleccionada, String nomUsuario) {
+        hireService.getLblNombreUsu().setText(nomUsuario);
         hireService.getLblCategoriaSelec().setText(categoriaSeleccionada);
+         controllerOptionSelected.seleccionerVista(hireService);
         try {
             //crear url de conexion
             URL url = new URL("http://localhost:3001/productos/");
@@ -71,7 +74,8 @@ public class ContratarServicio {
                         vistaContratarServicio2 hireService2 = new vistaContratarServicio2();
                         hireService2.setVisible(true);
                         hireService2.setLocationRelativeTo(null);
-                        GetInfoCliente.getInfoCliente(hireService2, peticionCliente, servicioSeleccionado, categoriaSeleccionada);
+                        GetInfoCliente.getInfoCliente(hireService2, peticionCliente, servicioSeleccionado, categoriaSeleccionada, nomUsuario);
+                        
                     }
                 }
             });

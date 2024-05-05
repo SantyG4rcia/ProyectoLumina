@@ -25,8 +25,9 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarPerfilUsuario {
 
-    public static void actualizarCliente(vistaActualizarPerfilUsuario updateClient) {
-        String nomUsuario = updateClient.getLblNombreUsu().getText();
+    public static void actualizarCliente(vistaActualizarPerfilUsuario updateClient, String nomUsuario) {
+        updateClient.getLblNombreUsu().setText(nomUsuario);
+        String userName = updateClient.getLblNombreUsu().getText();
         String[] idUser = {""};
         String[] idClient = {""};
         JsonObject usuarioEncontrado = null;
@@ -41,7 +42,7 @@ public class ActualizarPerfilUsuario {
         String tPago = "";
         try {
             // Hacer peticion get para saber cual registro se debe editar
-            String strUrl = "http://localhost:3001/usuario/?username=" + URLEncoder.encode(nomUsuario, "UTF-8");
+            String strUrl = "http://localhost:3001/usuario/?username=" + URLEncoder.encode(userName, "UTF-8");
             URL url = new URL(strUrl);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");

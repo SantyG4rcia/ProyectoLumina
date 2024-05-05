@@ -42,7 +42,7 @@ public class RegistroClientes {
                         String id = "";
                         String nombre = newUser.getTxtNombre().getText();
                         String nombreUsu = newUserP2.getTxtNomUsuario().getText();
-                        String password = newUserP2.getTxPasword().getText();
+                        String password = newUserP2.getTxtPasword().getText();
                         String confirmPassword = newUserP2.getTxtCofirnaPasword().getText();
 
                         if (nombreUsu.equals("") && password.equals("") && confirmPassword.equals(password)) {
@@ -102,8 +102,21 @@ public class RegistroClientes {
                                         + "\"id\": \"" + id + "\","
                                         + "\"username\": \"" + nombreUsu + "\","
                                         + "\"password\": \"" + confirmPassword + "\"}";
-                                
-                                System.out.println("Datos que se envian en el post: "+ requestBody);
+
+                                newUserP2.getChekShowPassword().addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        if (newUserP2.getChekShowPassword().isSelected()) {
+                                            newUserP2.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
+                                            newUserP2.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
+                                        } else {
+                                            newUserP2.getTxtPasword().setEchoChar('*'); // oculta contraseña
+                                            newUserP2.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
+                                        }
+                                    }
+                                });
+
+                                System.out.println("Datos que se envian en el post: " + requestBody);
 
                                 OutputStream os = conn.getOutputStream();
                                 os.write(requestBody.getBytes());
