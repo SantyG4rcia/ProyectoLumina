@@ -72,6 +72,23 @@ public class controllerOptionSelected {
                 }
             }
         });
+
+        catalogo.getBtnRegresar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas continuar?", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+                // Verificamos la opción seleccionada por el usuario
+                if (opcion == JOptionPane.YES_OPTION) {
+                    System.out.println("El usuario ha seleccionado 'Sí'");
+                    catalogo.dispose();
+                    landingPage lp;
+                    lp = new landingPage();
+                    lp.setVisible(true);
+                    lp.setLocationRelativeTo(null);
+                }
+            }
+        });
     }
 //FIN VISTA CATALOGO
 
@@ -177,9 +194,8 @@ public class controllerOptionSelected {
             }
         });
     }
-    
-    // FIN CONTRATAR SERVICIO 2
 
+    // FIN CONTRATAR SERVICIO 2
     public static void seleccionerVista(vistaContratarServicio3 hireService) {
         hireService.getJmiEditarPerfil().addActionListener(new ActionListener() {
             @Override

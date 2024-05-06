@@ -35,7 +35,6 @@ public class RegistroClientes {
                 newUserP2.setVisible(true);
                 newUserP2.setLocationRelativeTo(null);
                 AddNewUser.addClient(newUser); //Envia los datos a la clase que gestiona el post de los clientes
-
                 newUserP2.getBtnRegistarse().addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent evt) {
@@ -103,19 +102,6 @@ public class RegistroClientes {
                                         + "\"username\": \"" + nombreUsu + "\","
                                         + "\"password\": \"" + confirmPassword + "\"}";
 
-                                newUserP2.getChekShowPassword().addActionListener(new ActionListener() {
-                                    @Override
-                                    public void actionPerformed(ActionEvent e) {
-                                        if (newUserP2.getChekShowPassword().isSelected()) {
-                                            newUserP2.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
-                                            newUserP2.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
-                                        } else {
-                                            newUserP2.getTxtPasword().setEchoChar('*'); // oculta contraseña
-                                            newUserP2.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
-                                        }
-                                    }
-                                });
-
                                 System.out.println("Datos que se envian en el post: " + requestBody);
 
                                 OutputStream os = conn.getOutputStream();
@@ -134,9 +120,23 @@ public class RegistroClientes {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
+
+                            newUserP2.getChekShowPassword().addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    if (newUserP2.getChekShowPassword().isSelected()) {
+                                        newUserP2.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
+                                        newUserP2.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
+                                    } else {
+                                        newUserP2.getTxtPasword().setEchoChar('*'); // oculta contraseña
+                                        newUserP2.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
+                                    }
+                                }
+                            });
                         }
                     }
                 });
+
             }
         });
 

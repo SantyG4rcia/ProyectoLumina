@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  * @author USUARIO
  */
 public class AddNewUser {
-    public static void addClient(vistaRegistroUsuariosParte1 newUser){
+
+    public static void addClient(vistaRegistroUsuariosParte1 newUser) {
         String nomCliente = newUser.getTxtNombre().getText();
         String tDocuCliente = String.valueOf(newUser.getCbTipoDocumento().getSelectedItem());
         String nDocuCliente = newUser.getTxtNumDocumento().getText();

@@ -5,6 +5,8 @@
 package com.Lumina.proyectolumina.persistencia.controllerClients;
 
 import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.vistaAgregarCliente;
+import com.Lumina.proyectolumina.gui.vistasLogin.vistaAgregarCredencialesUsuario;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers.AgregarCredenciales;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -66,6 +68,10 @@ public class AddClientsLuninApi {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            
+            addCliente.dispose();
+            vistaAgregarCredencialesUsuario agregarCredenciales = new vistaAgregarCredencialesUsuario();
+            AgregarCredenciales.agregarCredenciales(agregarCredenciales, nomCliente);
         }
 
     }

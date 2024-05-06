@@ -169,6 +169,10 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
 
     }
 
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+
     public JMenuItem getJmiCerrarSesion() {
         return jmiCerrarSesion;
     }
@@ -438,10 +442,7 @@ public class vistaCatalogo extends javax.swing.JFrame implements ActionListener 
     }//GEN-LAST:event_btnServicio5ActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose();
-        landingPage lp = new landingPage();
-        lp.setVisible(true);
-        lp.setLocationRelativeTo(null);
+
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
