@@ -4,6 +4,7 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerLogin.controllerUserActions;
 
+import com.Lumina.proyectolumina.gui.landingPage;
 import com.Lumina.proyectolumina.gui.vistasAdminUser.vistaMenuAdmin;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
@@ -110,6 +111,33 @@ public class IniciarSesion {
                 }
             }
         });
+        login.getChekShowPassword().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (login.getChekShowPassword().isSelected()) {
+                    login.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
+                } else {
+                    login.getTxtPasword().setEchoChar('*'); // oculta contraseña
+                }
+            }
+        });
 
+        catalogo.getBtnRegresar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas continuar?\n"
+                        + "Si tu respuesta es afirmativa tu sesion se cerrará.", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+                // Verificamos la opción seleccionada por el usuario
+                if (opcion == JOptionPane.YES_OPTION) {
+                    System.out.println("El usuario ha seleccionado 'Sí'");
+                    catalogo.dispose();
+                    landingPage lp;
+                    lp = new landingPage();
+                    lp.setVisible(true);
+                    lp.setLocationRelativeTo(null);
+                }
+            }
+        });
     }
 }

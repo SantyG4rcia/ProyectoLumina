@@ -4,6 +4,7 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 
+import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContrararServicio1;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio2;
 import com.Lumina.proyectolumina.persistencia.controllerCatalogo.GetInfoCliente;
@@ -29,7 +30,7 @@ public class ContratarServicio {
     public static void selectService(vistaContrararServicio1 hireService, String categoriaSeleccionada, String nomUsuario) {
         hireService.getLblNombreUsu().setText(nomUsuario);
         hireService.getLblCategoriaSelec().setText(categoriaSeleccionada);
-         controllerOptionSelected.seleccionerVista(hireService);
+        controllerOptionSelected.seleccionerVista(hireService);
         try {
             //crear url de conexion
             URL url = new URL("http://localhost:3001/productos/");
@@ -64,7 +65,7 @@ public class ContratarServicio {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String servicioSeleccionado = hireService.getCbSelectServicio().getSelectedItem().toString();
-                    String categoriaSeleccionada =  hireService.getLblCategoriaSelec().getText();
+                    String categoriaSeleccionada = hireService.getLblCategoriaSelec().getText();
                     String peticionCliente = hireService.getTxtAreaDescripcionServicio().getText();
 
                     if (servicioSeleccionado.equals("SELECCIONE") || peticionCliente.equals("")) {
@@ -75,7 +76,7 @@ public class ContratarServicio {
                         hireService2.setVisible(true);
                         hireService2.setLocationRelativeTo(null);
                         GetInfoCliente.getInfoCliente(hireService2, peticionCliente, servicioSeleccionado, categoriaSeleccionada, nomUsuario);
-                        
+
                     }
                 }
             });
@@ -86,5 +87,21 @@ public class ContratarServicio {
             e.printStackTrace();
         }
 
+        hireService.getBtnRegresar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas cancelar el proceso de contratación de este servicio?\n "
+                        + "Si tu respuesta es afirmativa deberás reiniciar el proceso desde el principio", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+                // Verificamos la opción seleccionada por el usuario
+                if (opcion == JOptionPane.YES_OPTION) {
+                    hireService.dispose();
+                    vistaCatalogo catalogo = new vistaCatalogo();
+                    catalogo.getLblNombreUsu().setText(hireService.getLblNombreUsu().getText());
+                    catalogo.setVisible(true);
+                    catalogo.setLocationRelativeTo(null);
+                }
+            }
+        });
     }
 }

@@ -44,6 +44,10 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         lblPerfilUsu.setIcon(icon4);
     }
 
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+
     public JMenuItem getJmiCerrarSesion() {
         return jmiCerrarSesion;
     }
@@ -219,6 +223,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel7.setText("Nombre completo ");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
 
+        txtNombre.setEditable(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -232,6 +237,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
 
         cbTdocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Cedula de ciudadania", "Cedula de extranjeria", "Pasaporte" }));
+        cbTdocumento.setEnabled(false);
         jPanel1.add(cbTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
@@ -239,6 +245,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel9.setText("Correo electronico");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
 
+        txtCorreo.setEditable(false);
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
@@ -251,6 +258,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel11.setText("Numero de documento");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
+        txtNumDocumento.setEditable(false);
         txtNumDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumDocumentoActionPerformed(evt);
@@ -263,6 +271,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel12.setText("Telefono");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
 
+        txtTelefono.setEditable(false);
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
@@ -276,8 +285,10 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
 
         cb_tPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Tarjeta de debito / credito", "Transferencia bancaria", "Pago en efectivo" }));
+        cb_tPago.setEnabled(false);
         jPanel1.add(cb_tPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 160, -1));
 
+        txtDireccion.setEditable(false);
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
@@ -414,10 +425,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose();
-        vistaCatalogo catalogo = new vistaCatalogo();
-        catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null);
+ 
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnPaso3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaso3ActionPerformed

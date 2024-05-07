@@ -4,6 +4,8 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerCatalogo;
 
+import com.Lumina.proyectolumina.gui.landingPage;
+import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaContratarServicio3;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaVerInfoEmpleado;
 import com.Lumina.proyectolumina.persistencia.controllerEmpleados.GetEmpleadosLuminApi;
@@ -20,6 +22,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -32,6 +35,7 @@ public class ContactarEmpleado {
         hireService.getLblNombreUsu().setText(nomUsuario);
         hireService.getLblCategoriaSelec().setText(categoriaSelect);
         hireService.getLblServicioSelec().setText(servicioSelec);
+        vistaVerInfoEmpleado empleado = new vistaVerInfoEmpleado();
 
         try {
             //crear url de conexion
@@ -68,8 +72,7 @@ public class ContactarEmpleado {
                 });
                 id++;
             }
-            // Actualizar la interfaz gráfica
-            tabla.fireTableDataChanged();
+
 
             final DefaultTableModel tablaEmpleados = tabla;
             MouseListener mouseListener = new MouseListener() {
@@ -78,7 +81,6 @@ public class ContactarEmpleado {
                     hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            vistaVerInfoEmpleado empleado = new vistaVerInfoEmpleado();
                             int seleccion = hireService.getTbContratarEmpleado().getSelectedRow();
                             empleado.getTxtNombre().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 1)));
                             empleado.getTxtCargo().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 2)));
@@ -117,6 +119,46 @@ public class ContactarEmpleado {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        hireService.getBtnRegresar().addActionListener((ActionEvent e) -> {
+            int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas cancelar el proceso de contratación de este servicio?\n "
+                    + "Si tu respuesta es afirmativa deberás reiniciar el proceso desde el principio", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+            // Verificamos la opción seleccionada por el usuario
+            if (opcion == JOptionPane.YES_OPTION) {
+                hireService.dispose();
+                vistaCatalogo catalogo = new vistaCatalogo();
+                catalogo.getLblNombreUsu().setText(hireService.getLblNombreUsu().getText());
+                catalogo.setVisible(true);
+                catalogo.setLocationRelativeTo(null);
+
+                catalogo.getBtnRegresar().addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas continuar?\n"
+                                + "Si tu respuesta es afirmativa tu sesion se cerrará.", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+                        // Verificamos la opción seleccionada por el usuario
+                        if (opcion == JOptionPane.YES_OPTION) {
+                            System.out.println("El usuario ha seleccionado 'Sí'");
+                            catalogo.dispose();
+                            landingPage lp;
+                            lp = new landingPage();
+                            lp.setVisible(true);
+                            lp.setLocationRelativeTo(null);
+                        }
+                    }
+                });
+            }
+        });
+
+        empleado.getBtnAceptar().addActionListener((ActionEvent e) -> {
+            empleado.dispose();   
+            hireService.getLblNombreUsu().setText(nomUsuario);
+            hireService.setVisible(true);
+            hireService.setLocationRelativeTo(null);
+           
+        });
     }
 
 }

@@ -27,11 +27,11 @@ import javax.swing.JOptionPane;
 public class RegistroClientes {
 
     public static void createUser(vistaRegistroUsuariosParte1 newUser) {
+        vistaRegistroUsuariosParte2 newUserP2 = new vistaRegistroUsuariosParte2();
         newUser.getBtnPaso2().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 newUser.dispose();
-                vistaRegistroUsuariosParte2 newUserP2 = new vistaRegistroUsuariosParte2();
                 newUserP2.setVisible(true);
                 newUserP2.setLocationRelativeTo(null);
                 AddNewUser.addClient(newUser); //Envia los datos a la clase que gestiona el post de los clientes
@@ -120,25 +120,22 @@ public class RegistroClientes {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-                            newUserP2.getChekShowPassword().addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    if (newUserP2.getChekShowPassword().isSelected()) {
-                                        newUserP2.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
-                                        newUserP2.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
-                                    } else {
-                                        newUserP2.getTxtPasword().setEchoChar('*'); // oculta contraseña
-                                        newUserP2.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
-                                    }
-                                }
-                            });
                         }
                     }
                 });
-
             }
         });
-
+        newUserP2.getChekShowPassword().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (newUserP2.getChekShowPassword().isSelected()) {
+                    newUserP2.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
+                    newUserP2.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
+                } else {
+                    newUserP2.getTxtPasword().setEchoChar('*'); // oculta contraseña
+                    newUserP2.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
+                }
+            }
+        });
     }
 }

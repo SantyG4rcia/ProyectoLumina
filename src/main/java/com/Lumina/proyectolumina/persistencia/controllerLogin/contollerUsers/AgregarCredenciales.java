@@ -4,7 +4,9 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers;
 
+import com.Lumina.proyectolumina.gui.vistasAdminUser.vistasClientes.listaClientes;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaAgregarCredencialesUsuario;
+import com.Lumina.proyectolumina.persistencia.controllerClients.GetClientsLuninApi;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -153,19 +155,6 @@ public class AgregarCredenciales {
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
-
-                            agregarCredenciales.getChekShowPassword().addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    if (agregarCredenciales.getChekShowPassword().isSelected()) {
-                                        agregarCredenciales.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
-                                        agregarCredenciales.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
-                                    } else {
-                                        agregarCredenciales.getTxtPasword().setEchoChar('*'); // oculta contraseña
-                                        agregarCredenciales.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
-                                    }
-                                }
-                            });
                         }
                     }
                 });
@@ -239,6 +228,11 @@ public class AgregarCredenciales {
                     e.printStackTrace();
                 }
 
+                listaClientes clientes = new listaClientes();
+                GetClientsLuninApi.GetClients(clientes.getTb_Clientes());
+                clientes.setVisible(true);
+                clientes.setLocationRelativeTo(null);
+
             } else if (tieneUsuarioAsignado == true) {
                 try {
                     String StrlUrlGetUser = "http://localhost:3001/usuario/?id=" + URLEncoder.encode(idUserName, "UTF-8");
@@ -268,5 +262,18 @@ public class AgregarCredenciales {
                 }
             }
         }
+
+        agregarCredenciales.getChekShowPassword().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (agregarCredenciales.getChekShowPassword().isSelected()) {
+                    agregarCredenciales.getTxtPasword().setEchoChar((char) 0); // muestra contraseña
+                    agregarCredenciales.getTxtCofirnaPasword().setEchoChar((char) 0); // muestra contraseña
+                } else {
+                    agregarCredenciales.getTxtPasword().setEchoChar('*'); // oculta contraseña
+                    agregarCredenciales.getTxtCofirnaPasword().setEchoChar('*'); // oculta contraseña
+                }
+            }
+        });
     }
 }

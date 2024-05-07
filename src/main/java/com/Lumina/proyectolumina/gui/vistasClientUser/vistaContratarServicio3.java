@@ -43,6 +43,10 @@ public class vistaContratarServicio3 extends javax.swing.JFrame {
         lblPerfilUsu.setIcon(icon4);
     }
 
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+
     public JMenuItem getJmiCerrarSesion() {
         return jmiCerrarSesion;
     }
@@ -144,10 +148,7 @@ public class vistaContratarServicio3 extends javax.swing.JFrame {
 
         tbContratarEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "No. Empleado", "Nombre", "Cargo", "Calificaciones"
@@ -235,10 +236,7 @@ public class vistaContratarServicio3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose();
-        vistaCatalogo catalogo = new vistaCatalogo();
-        catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null);
+     
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnContactarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactarEmpleadoActionPerformed

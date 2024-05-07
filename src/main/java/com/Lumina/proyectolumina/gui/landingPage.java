@@ -188,8 +188,10 @@ public class landingPage extends javax.swing.JFrame {
     private void btnHomeClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeClientsActionPerformed
         this.dispose();
         vistaCatalogo catalogo = new vistaCatalogo();
-        catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null);
+        vistaInicioSesion login = new vistaInicioSesion();
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
+        IniciarSesion.login(login, catalogo);
     }//GEN-LAST:event_btnHomeClientsActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed

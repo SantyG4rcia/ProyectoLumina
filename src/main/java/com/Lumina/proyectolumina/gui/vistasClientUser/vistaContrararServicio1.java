@@ -55,6 +55,10 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
         lblPerfilUsu.setIcon(icon4);
     }
 
+    public JButton getBtnRegresar() {
+        return btnRegresar;
+    }
+
     public JMenuItem getJmiCerrarSesion() {
         return jmiCerrarSesion;
     }
@@ -256,10 +260,7 @@ public class vistaContrararServicio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPaso2ActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        this.dispose();
-        vistaCatalogo catalogo = new vistaCatalogo();
-        catalogo.setVisible(true);
-        catalogo.setLocationRelativeTo(null);
+   
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
