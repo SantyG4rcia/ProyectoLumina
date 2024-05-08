@@ -16,8 +16,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -59,60 +57,45 @@ public class ContactarEmpleado {
             JsonArray jsonArray = gson.fromJson(response.toString(), JsonArray.class);
             int id = 1;
             double randomValue;
-            double calificaciones;
+            double calificaciones = 0;
             DefaultTableModel tabla = (DefaultTableModel) hireService.getTbContratarEmpleado().getModel();
             for (JsonElement element : jsonArray) {
                 JsonObject jsonObject = element.getAsJsonObject();
                 String nombre = jsonObject.get("nombre").getAsString();
                 String cargo = jsonObject.get("cargo").getAsString();
-                randomValue = Math.random() * 4.9;
-                calificaciones = Math.round(randomValue * 10) / 10.0;
+
+                do {
+                    randomValue = Math.random() * 4.9;
+                    calificaciones = Math.round(randomValue * 10) / 10.0;
+                } while (randomValue <= 4);
+
                 tabla.addRow(new Object[]{
                     id, nombre, cargo, calificaciones
                 });
                 id++;
             }
 
-
             final DefaultTableModel tablaEmpleados = tabla;
-            MouseListener mouseListener = new MouseListener() {
+            hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
                 @Override
-                public void mouseClicked(MouseEvent e) {
-                    hireService.getBtnContactarEmpleado().addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            int seleccion = hireService.getTbContratarEmpleado().getSelectedRow();
-                            empleado.getTxtNombre().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 1)));
-                            empleado.getTxtCargo().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 2)));
-                            empleado.getLblCategoriaSelec().setText(categoriaSelect);
-                            empleado.getLblServicioSelec().setText(servicioSelec);
-                            String nomEmpleado = String.valueOf(tablaEmpleados.getValueAt(seleccion, 1));
-                            GetEmpleadosLuminApi.getEmpleado(empleado, nomEmpleado);
-                            empleado.setVisible(true);
-                            empleado.setLocationRelativeTo(null);
-                            controllerOptionSelected.seleccionerVista(empleado);
-                        }
-                    });
-
+                public void actionPerformed(ActionEvent e) {
+                    int seleccion = hireService.getTbContratarEmpleado().getSelectedRow();
+                    if (hireService.getTbContratarEmpleado().getSelectedRowCount() == 0) {
+                        JOptionPane.showMessageDialog(hireService, "Debe seleccionar un empleado para continuar", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        hireService.dispose();
+                        empleado.getTxtNombre().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 1)));
+                        empleado.getTxtCargo().setText(String.valueOf(tablaEmpleados.getValueAt(seleccion, 2)));
+                        empleado.getLblCategoriaSelec().setText(categoriaSelect);
+                        empleado.getLblServicioSelec().setText(servicioSelec);
+                        String nomEmpleado = String.valueOf(tablaEmpleados.getValueAt(seleccion, 1));
+                        GetEmpleadosLuminApi.getEmpleado(empleado, nomEmpleado);
+                        empleado.setVisible(true);
+                        empleado.setLocationRelativeTo(null);
+                        controllerOptionSelected.seleccionerVista(empleado);
+                    }
                 }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                }
-            };
-            hireService.getTbContratarEmpleado().addMouseListener(mouseListener);
+            });
 
             conn.disconnect();
 
@@ -131,6 +114,7 @@ public class ContactarEmpleado {
                 catalogo.getLblNombreUsu().setText(hireService.getLblNombreUsu().getText());
                 catalogo.setVisible(true);
                 catalogo.setLocationRelativeTo(null);
+                controllerOptionSelected.seleccionerVista(catalogo);
 
                 catalogo.getBtnRegresar().addActionListener(new ActionListener() {
                     @Override
@@ -153,11 +137,11 @@ public class ContactarEmpleado {
         });
 
         empleado.getBtnAceptar().addActionListener((ActionEvent e) -> {
-            empleado.dispose();   
+            empleado.dispose();
             hireService.getLblNombreUsu().setText(nomUsuario);
             hireService.setVisible(true);
             hireService.setLocationRelativeTo(null);
-           
+
         });
     }
 

@@ -29,9 +29,6 @@ public class GetInfoCliente {
 
     public static void getInfoCliente(vistaContratarServicio2 hireService, String descripServicio, String nomServicio, String categoriaSelec, String nomUsuario) {
 
-        String tipoUsuario[] = {""};
-        String nomEmpresa = "";
-        String telEmpresa = "";
         String idClient = "";
 
         hireService.getLblNombreUsu().setText(nomUsuario);
@@ -39,22 +36,6 @@ public class GetInfoCliente {
         hireService.getLblServicioSelec().setText(nomServicio);
         hireService.getTxtAreaDescripcionServicio().setText(descripServicio);
         controllerOptionSelected.seleccionerVista(hireService);
-
-        hireService.getCbTipoUsuario().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tipoUsuario[0] = setTipoUsuario(hireService, tipoUsuario);
-                if ("Empresario".equals(tipoUsuario[0])) {
-                    if (!nomEmpresa.equals("") && !telEmpresa.equals("")) {
-                        System.out.println("Nombre empresa: " + nomEmpresa);
-                        System.out.println("Telefono de la empesa: " + telEmpresa);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "NO DEBE HABER CAMPOS VACIOS");
-                    }
-                }
-
-            }
-        });
 
         String userName = hireService.getLblNombreUsu().getText();
         try {
@@ -151,20 +132,8 @@ public class GetInfoCliente {
                 catalogo.getLblNombreUsu().setText(hireService.getLblNombreUsu().getText());
                 catalogo.setVisible(true);
                 catalogo.setLocationRelativeTo(null);
+                controllerOptionSelected.seleccionerVista(catalogo);
             }
         });
-    }
-
-    private static String setTipoUsuario(vistaContratarServicio2 hireService, String[] tipoUsuario) {
-        if (hireService.getCbTipoUsuario().getSelectedItem().equals("Empresario")) {
-            hireService.getTxtNombreEmpresa().setEditable(true);
-            hireService.getTxtTelefonoEmpresa().setEditable(true);
-            tipoUsuario[0] = hireService.getCbTipoUsuario().getSelectedItem().toString();
-        } else if (hireService.getCbTipoUsuario().getSelectedItem().equals("Trabajador Independiente")) {
-            hireService.getTxtNombreEmpresa().setEditable(false);
-            hireService.getTxtTelefonoEmpresa().setEditable(false);
-            tipoUsuario[0] = hireService.getCbTipoUsuario().getSelectedItem().toString();
-        }
-        return tipoUsuario[0];
     }
 }

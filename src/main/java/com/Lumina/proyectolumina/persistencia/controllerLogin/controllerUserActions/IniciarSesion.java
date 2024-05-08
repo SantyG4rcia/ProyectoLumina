@@ -4,7 +4,6 @@
  */
 package com.Lumina.proyectolumina.persistencia.controllerLogin.controllerUserActions;
 
-import com.Lumina.proyectolumina.gui.landingPage;
 import com.Lumina.proyectolumina.gui.vistasAdminUser.vistaMenuAdmin;
 import com.Lumina.proyectolumina.gui.vistasClientUser.vistaCatalogo;
 import com.Lumina.proyectolumina.gui.vistasLogin.vistaInicioSesion;
@@ -64,7 +63,9 @@ public class IniciarSesion {
                             // Convertir la respuesta JSON en un array JsonArray en lugar de JsonObject
                             JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
 
-                            if (jsonObject.get("encontrado").getAsBoolean() == true) {
+                            boolean encontrado = jsonObject.get("encontrado").getAsBoolean();
+
+                            if (encontrado == true) {
 
                                 try {
                                     String strUrlGetUser = "http://localhost:3001/usuario/?username=" + URLEncoder.encode(userName, "UTF-8");
@@ -105,6 +106,7 @@ public class IniciarSesion {
                             conn.disconnect();
                         } catch (Exception ex) {
                             ex.printStackTrace();
+                            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS, POR FAVOR VERIFIQUE LA INFORMACION E INTENTE DE NUEVO");
                         }
                     }
 
@@ -122,22 +124,6 @@ public class IniciarSesion {
             }
         });
 
-        catalogo.getBtnRegresar().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas continuar?\n"
-                        + "Si tu respuesta es afirmativa tu sesion se cerrará.", "Confirmación", JOptionPane.YES_NO_OPTION);
 
-                // Verificamos la opción seleccionada por el usuario
-                if (opcion == JOptionPane.YES_OPTION) {
-                    System.out.println("El usuario ha seleccionado 'Sí'");
-                    catalogo.dispose();
-                    landingPage lp;
-                    lp = new landingPage();
-                    lp.setVisible(true);
-                    lp.setLocationRelativeTo(null);
-                }
-            }
-        });
     }
 }

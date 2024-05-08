@@ -72,9 +72,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         return cb_tPago;
     }
 
-    public JComboBox<String> getCbTipoUsuario() {
-        return cbTipoUsuario;
-    }
 
     public JLabel getLblCategoriaSelec() {
         return lblCategoriaSelec;
@@ -100,20 +97,12 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         return txtNombre;
     }
 
-    public JTextField getTxtNombreEmpresa() {
-        return txtNombreEmpresa;
-    }
-
     public JTextField getTxtNumDocumento() {
         return txtNumDocumento;
     }
 
     public JTextField getTxtTelefono() {
         return txtTelefono;
-    }
-
-    public JTextField getTxtTelefonoEmpresa() {
-        return txtTelefonoEmpresa;
     }
 
     /**
@@ -129,7 +118,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jmiEditarPerfil = new javax.swing.JMenuItem();
         jmiCerrarSesion = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        cbTipoUsuario = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnPaso3 = new javax.swing.JButton();
@@ -149,13 +137,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         cb_tPago = new javax.swing.JComboBox<>();
         txtDireccion = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        txtNombreEmpresa = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtTelefonoEmpresa = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
         lblCategoriaSelec = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -182,9 +163,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empresario", "Trabajador Independiente" }));
-        jPanel1.add(cbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, -1));
-
         jLabel16.setFont(new java.awt.Font("Mulish Black", 3, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(2, 31, 89));
         jLabel16.setText("PASO 2/3");
@@ -199,7 +177,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 120, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 440, 120, -1));
 
         btnPaso3.setBackground(new java.awt.Color(4, 49, 140));
         btnPaso3.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
@@ -210,18 +188,18 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 btnPaso3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPaso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 120, -1));
-        jPanel1.add(txtAreaDescripcionServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 150, 60));
+        jPanel1.add(btnPaso3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 120, -1));
+        jPanel1.add(txtAreaDescripcionServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 150, 60));
 
         jLabel15.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(2, 31, 89));
         jLabel15.setText("Descripcion del servicio");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(2, 31, 89));
         jLabel7.setText("Nombre completo ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
         txtNombre.setEditable(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -229,21 +207,21 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 txtNombreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 160, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 160, -1));
 
         jLabel8.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(2, 31, 89));
         jLabel8.setText("Tipo de documento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
         cbTdocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Cedula de ciudadania", "Cedula de extranjeria", "Pasaporte" }));
         cbTdocumento.setEnabled(false);
-        jPanel1.add(cbTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
+        jPanel1.add(cbTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(2, 31, 89));
         jLabel9.setText("Correo electronico");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
 
         txtCorreo.setEditable(false);
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
@@ -251,12 +229,12 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 txtCorreoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 160, -1));
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 160, -1));
 
         jLabel11.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(2, 31, 89));
         jLabel11.setText("Numero de documento");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
         txtNumDocumento.setEditable(false);
         txtNumDocumento.addActionListener(new java.awt.event.ActionListener() {
@@ -264,12 +242,12 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 txtNumDocumentoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 150, -1));
+        jPanel1.add(txtNumDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 150, -1));
 
         jLabel12.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(2, 31, 89));
         jLabel12.setText("Telefono");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
 
         txtTelefono.setEditable(false);
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -277,16 +255,16 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 txtTelefonoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 160, -1));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 160, -1));
 
         jLabel13.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(2, 31, 89));
         jLabel13.setText("Metodo de pago");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, -1, -1));
 
         cb_tPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Tarjeta de debito / credito", "Transferencia bancaria", "Pago en efectivo" }));
         cb_tPago.setEnabled(false);
-        jPanel1.add(cb_tPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 160, -1));
+        jPanel1.add(cb_tPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 160, -1));
 
         txtDireccion.setEditable(false);
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
@@ -294,45 +272,12 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
                 txtDireccionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 150, -1));
+        jPanel1.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, -1));
 
         jLabel14.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(2, 31, 89));
         jLabel14.setText("Direccion");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, -1, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 210, 20));
-
-        txtNombreEmpresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreEmpresaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtNombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 180, -1));
-
-        jLabel5.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel5.setText("Nombre de la empresa ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel6.setText("Telefono de la empresa");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
-
-        txtTelefonoEmpresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefonoEmpresaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtTelefonoEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 180, -1));
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 20, 230));
-
-        jLabel4.setFont(new java.awt.Font("Mulish SemiBold", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(2, 31, 89));
-        jLabel4.setText("Tipo de Usuario");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, -1, -1));
 
         lblCategoriaSelec.setFont(new java.awt.Font("Mulish Light", 0, 12)); // NOI18N
         lblCategoriaSelec.setForeground(new java.awt.Color(34, 52, 64));
@@ -347,7 +292,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Mulish Black", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(2, 31, 89));
         jLabel10.setText("Informacion de contacto");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, -1));
 
         lblServicioSelec.setFont(new java.awt.Font("Mulish Light", 0, 12)); // NOI18N
         lblServicioSelec.setForeground(new java.awt.Color(34, 52, 64));
@@ -395,14 +340,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNombreEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEmpresaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreEmpresaActionPerformed
-
-    private void txtTelefonoEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEmpresaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefonoEmpresaActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -471,7 +408,6 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     private javax.swing.JButton btnPaso3;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cbTdocumento;
-    private javax.swing.JComboBox<String> cbTipoUsuario;
     private javax.swing.JComboBox<String> cb_tPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -483,17 +419,12 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jPanelFondo;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JMenuItem jmiCerrarSesion;
     private javax.swing.JMenuItem jmiEditarPerfil;
     private javax.swing.JPopupMenu jpmAcionesUsuario;
@@ -507,9 +438,7 @@ public class vistaContratarServicio2 extends javax.swing.JFrame {
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNombreEmpresa;
     private javax.swing.JTextField txtNumDocumento;
     private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtTelefonoEmpresa;
     // End of variables declaration//GEN-END:variables
 }
