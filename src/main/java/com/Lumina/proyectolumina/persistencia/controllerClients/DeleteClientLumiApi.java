@@ -126,8 +126,58 @@ public class DeleteClientLumiApi {
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
-                            JOptionPane.showMessageDialog(null, "CLIENTE ELIMINADO CORRECTAMENTE");
-                        } 
+
+                            try {
+                                String StrlUrlGetUser = "http://localhost:3001/usuarios/";
+                                URL urlGetUser = new URL(StrlUrlGetUser);
+                                HttpURLConnection conn2 = (HttpURLConnection) urlGetUser.openConnection();
+                                conn2.setRequestMethod("GET");
+
+                                // leer la respuesta del servidor
+                                BufferedReader reader2 = new BufferedReader(new InputStreamReader(conn2.getInputStream()));
+                                StringBuilder response2 = new StringBuilder();
+                                String line2;
+                                while ((line2 = reader2.readLine()) != null) {
+                                    response2.append(line2);
+                                }
+                                reader2.close();
+
+                                // Crear un objeto Gson
+                                Gson gsonGetUser = new Gson();
+
+                                // Convertir la respuesta JSON en un array JsonArray en lugar de JsonObject
+                                JsonArray jsonArrayUsers = gsonGetUser.fromJson(response2.toString(), JsonArray.class);
+                                for (JsonElement jsonElement : jsonArrayUsers) {
+                                    JsonObject jsonObjetUser = jsonElement.getAsJsonObject();
+                                    String idUser = jsonObjetUser.get("userId").getAsString();
+                                    if (idUser.equals(id2)) {
+                                        try {
+                                            String username = jsonObjetUser.get("username").getAsString();
+                                            String strUrlDeleteUser = "http://localhost:3001/eliminarUsuario/?username=" + URLEncoder.encode(username, "UTF-8");
+                                            URL urlDeleteUser = new URL(strUrlDeleteUser);
+
+                                            // Abre la conexión
+                                            HttpURLConnection connection = (HttpURLConnection) urlDeleteUser.openConnection();
+
+                                            // Configura el método de la petición como DELETE
+                                            connection.setRequestMethod("DELETE");
+
+                                            // Obtiene el código de respuesta
+                                            int responseCode = connection.getResponseCode();
+                                            System.out.println("Código de respuesta: " + responseCode);
+
+                                            // Cierra la conexión
+                                            connection.disconnect();
+                                        } catch (Exception ex) {
+                                            ex.printStackTrace();
+                                        }
+                                    }
+                                }
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+
+                        }
 
                     }
                 });
@@ -136,6 +186,8 @@ public class DeleteClientLumiApi {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        JOptionPane.showMessageDialog(null, "CLIENTE ELIMINADO CORRECTAMENTE");
 
     }
 }
