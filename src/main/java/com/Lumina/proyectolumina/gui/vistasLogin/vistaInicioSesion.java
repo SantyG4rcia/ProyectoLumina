@@ -5,6 +5,7 @@
 package com.Lumina.proyectolumina.gui.vistasLogin;
 
 import com.Lumina.proyectolumina.gui.landingPage;
+import com.Lumina.proyectolumina.persistencia.controllerLogin.contollerUsers.RegistroClientes;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -24,7 +25,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
      */
     public vistaInicioSesion() {
         initComponents();
-         ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
+        ImageIcon iconLumina = new ImageIcon("src/main/java/com/Lumina/proyectolumina/gui/recursos multimedia/logo lumina blanco (2).png");
         Icon icon2 = new ImageIcon(iconLumina.getImage().getScaledInstance(lblIconoLumina.getWidth(), lblIconoLumina.getHeight(), Image.SCALE_SMOOTH));
         lblIconoLumina.setIcon(icon2);
     }
@@ -34,7 +35,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
     }
 
     public JButton getBtnRecuperarContraseña() {
-        return btnRecuperarContraseña;
+        return btnRegistrarse;
     }
 
     public JCheckBox getChekShowPassword() {
@@ -70,7 +71,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        btnRecuperarContraseña = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
         btnBackHome = new javax.swing.JButton();
         btnInicioSesion = new javax.swing.JButton();
         txtPasword = new javax.swing.JPasswordField();
@@ -186,13 +187,13 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(2, 31, 89));
         jLabel5.setText("Contraseña");
 
-        btnRecuperarContraseña.setBackground(new java.awt.Color(4, 49, 140));
-        btnRecuperarContraseña.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
-        btnRecuperarContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        btnRecuperarContraseña.setText("Recuperar contraseña");
-        btnRecuperarContraseña.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarse.setBackground(new java.awt.Color(4, 49, 140));
+        btnRegistrarse.setFont(new java.awt.Font("Mulish ExtraBold", 0, 18)); // NOI18N
+        btnRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarse.setText("Crear cuenta Lumina");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRecuperarContraseñaActionPerformed(evt);
+                btnRegistrarseActionPerformed(evt);
             }
         });
 
@@ -234,7 +235,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(btnBackHome)
                 .addGap(18, 18, 18)
-                .addComponent(btnRecuperarContraseña)
+                .addComponent(btnRegistrarse)
                 .addGap(18, 18, 18)
                 .addComponent(btnInicioSesion)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -266,7 +267,7 @@ public class vistaInicioSesion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackHome)
-                    .addComponent(btnRecuperarContraseña)
+                    .addComponent(btnRegistrarse)
                     .addComponent(btnInicioSesion))
                 .addGap(31, 31, 31))
         );
@@ -293,16 +294,20 @@ public class vistaInicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserActionPerformed
 
-    private void btnRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRecuperarContraseñaActionPerformed
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        this.dispose();
+        vistaRegistroUsuariosParte1 newUser = new vistaRegistroUsuariosParte1();
+        newUser.setVisible(true);
+        newUser.setLocationRelativeTo(null);
+        RegistroClientes.createUser(newUser);
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     private void btnBackHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackHomeActionPerformed
-         this.dispose();
+        this.dispose();
         landingPage lp;
-         lp = new landingPage();
-         lp.setVisible(true);
-         lp.setLocationRelativeTo(null);   
+        lp = new landingPage();
+        lp.setVisible(true);
+        lp.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnBackHomeActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -310,19 +315,18 @@ public class vistaInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
-  
+
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void chekShowPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chekShowPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chekShowPasswordActionPerformed
 
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackHome;
     private javax.swing.JButton btnInicioSesion;
-    private javax.swing.JButton btnRecuperarContraseña;
+    private javax.swing.JButton btnRegistrarse;
     private javax.swing.JCheckBox chekShowPassword;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
